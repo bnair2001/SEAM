@@ -77,7 +77,7 @@ class SegmentationDataset(Dataset):
 
         name = self.img_name_list[idx]
 
-        img = Image.open(os.path.join(self.img_dir, name + '.jpg')).convert("RGB")
+        img = Image.open(os.path.join(self.img_dir, name + '.png')).convert("RGB")
         mask = Image.open(os.path.join(self.label_dir, name + '.png'))
 
         if self.rescale is not None:
