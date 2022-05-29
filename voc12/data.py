@@ -9,7 +9,7 @@ from torchvision import transforms
 from tqdm import tqdm
 
 IMG_FOLDER_NAME = "/home/bnair/data/chest14"
-DS_CLASSIFICATION = "full_ds_classification.csv"
+DS_CLASSIFICATION = "/home/bnair/SEAM/voc12/full_ds_classification.csv"
 
 CAT_LIST = [
     "Atelectasis",
@@ -58,8 +58,8 @@ def load_image_label_list_from_xml(img_name_list, voc12_root):
 
 def load_image_label_list_from_npy(img_name_list):
 
-    cls_labels_dict = np.load("voc12/cls_labels.npy", allow_pickle=True).item()
-
+    cls_labels_dict = np.load("voc12/cls_bb_labels.npy", allow_pickle=True).item()
+    # print(cls_labels_dict)
     return [cls_labels_dict[img_name] for img_name in img_name_list]
 
 
