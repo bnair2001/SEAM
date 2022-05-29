@@ -19,12 +19,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--weights", required=True, type=str)
     parser.add_argument("--network", default="network.resnet38_SEAM", type=str)
-    parser.add_argument("--infer_list", default="voc12/train.txt", type=str)
+    parser.add_argument("--infer_list", default="voc12/bb_list.txt", type=str)
     parser.add_argument("--num_workers", default=8, type=int)
-    parser.add_argument("--voc12_root", default='VOC2012', type=str)
-    parser.add_argument("--out_cam", default=None, type=str)
-    parser.add_argument("--out_crf", default=None, type=str) 
-    parser.add_argument("--out_cam_pred", default=None, type=str)
+    parser.add_argument("--voc12_root", default='/home/bnair/data/chest14', type=str)
+    parser.add_argument("--out_cam", default='/home/bnair/SEAM/outcam', type=str)
+    parser.add_argument("--out_crf", default='/home/bnair/SEAM/outcrf', type=str) 
+    parser.add_argument("--out_cam_pred", default='/home/bnair/SEAM/outcampred', type=str)
     parser.add_argument("--out_cam_pred_alpha", default=0.26, type=float)
 
     args = parser.parse_args()
@@ -60,12 +60,13 @@ if __name__ == '__main__':
                     _, cam = model_replicas[i%n_gpus](img.cuda())
                     cam = F.upsample(cam[:,1:,:,:], orig_img_size, mode='bilinear', align_corners=False)[0]
                     cam = cam.cpu().numpy() * label.clone().view(20, 1, 1).numpy()
+                    # print(cam)
                     if i % 2 == 1:
                         cam = np.flip(cam, axis=-1)
                     return cam
 
         thread_pool = pyutils.BatchThreader(_work, list(enumerate(img_list)),
-                                            batch_size=12, prefetch_size=0, processes=args.num_workers)
+                                            batch_size=4, prefetch_size=0, processes=args.num_workers)
 
         cam_list = thread_pool.pop_results()
 
@@ -103,12 +104,12 @@ if __name__ == '__main__':
 
             return n_crf_al
 
-        if args.out_crf is not None:
-            for t in crf_alpha:
-                crf = _crf_with_alpha(cam_dict, t)
-                folder = args.out_crf + ('_%.1f'%t)
-                if not os.path.exists(folder):
-                    os.makedirs(folder)
-                np.save(os.path.join(folder, img_name + '.npy'), crf)
+        # if args.out_crf is not None:
+        #     for t in crf_alpha:
+        #         crf = _crf_with_alpha(cam_dict, t)
+        #         folder = args.out_crf + ('_%.1f'%t)
+        #         if not os.path.exists(folder):
+        #             os.makedirs(folder)
+        #         np.save(os.path.join(folder, img_name + '.npy'), crf)
 
         print(iter)
