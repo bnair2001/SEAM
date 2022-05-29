@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch_size", default=8, type=int)
-    parser.add_argument("--max_epoches", default=8, type=int)
+    parser.add_argument("--max_epoches", default=4, type=int)
     parser.add_argument("--network", default="network.resnet38_SEAM", type=str)
     parser.add_argument("--lr", default=0.01, type=float)
     parser.add_argument("--num_workers", default=8, type=int)
@@ -60,8 +60,8 @@ if __name__ == '__main__':
     train_dataset = voc12.data.VOC12ClsDataset(args.train_list, voc12_root=args.voc12_root,
                                                transform=transforms.Compose([
                         imutils.RandomResizeLong(448, 768),
-                        transforms.RandomHorizontalFlip(),
-                        transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3, hue=0.1),
+                        # transforms.RandomHorizontalFlip(),
+                        # transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3, hue=0.1),
                         np.asarray,
                         model.normalize,
                         imutils.RandomCrop(args.crop_size),
@@ -73,7 +73,8 @@ if __name__ == '__main__':
     train_data_loader = DataLoader(train_dataset, batch_size=args.batch_size,
                                    shuffle=True, num_workers=args.num_workers, pin_memory=True, drop_last=True,
                                    worker_init_fn=worker_init_fn)
-    max_step = len(train_dataset) // args.batch_size * args.max_epoches
+    # max_step = len(train_dataset) // args.batch_size * args.max_epoches
+    max_step = 7000
 
     param_groups = model.get_parameter_groups()
     optimizer = torchutils.PolyOptimizer([
