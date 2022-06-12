@@ -1,0 +1,886 @@
+{'batch_size': 8, 'max_epoches': 4, 'network': 'network.resnet38_SEAM', 'lr': 0.01, 'num_workers': 8, 'wt_dec': 0.0005, 'train_list': 'voc12/train_list.txt', 'val_list': 'voc12/valid_list.txt', 'session_name': 'TRY2', 'crop_size': 448, 'weights': '/home/bnair/SEAM/SEAM_model/resnet38_SEAM.pth', 'voc12_root': '/home/bnair/data/chest14', 'tblog_dir': './tblog'}
+Net(
+  (conv1a): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (b2): ResBlock(
+    (bn_branch2a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b2_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b2_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b3): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b3_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b3_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b4_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_3): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_4): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_5): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b5): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (conv_branch1): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (b5_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+  )
+  (b5_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+  )
+  (b6): ResBlock_bot(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b1): Dropout2d(p=0.3, inplace=False)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4), bias=False)
+    (bn_branch2b2): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b2): Dropout2d(p=0.3, inplace=False)
+    (conv_branch2b2): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (conv_branch1): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (b7): ResBlock_bot(
+    (bn_branch2a): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(2048, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b1): Dropout2d(p=0.5, inplace=False)
+    (conv_branch2b1): Conv2d(1024, 2048, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4), bias=False)
+    (bn_branch2b2): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b2): Dropout2d(p=0.5, inplace=False)
+    (conv_branch2b2): Conv2d(2048, 4096, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (conv_branch1): Conv2d(2048, 4096, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (bn7): BatchNorm2d(4096, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (dropout7): Dropout2d(p=0.5, inplace=False)
+  (fc8): Conv2d(4096, 21, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f8_3): Conv2d(512, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f8_4): Conv2d(1024, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f9): Conv2d(195, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+)
+======================================================
+Session started:  Tue Jun  7 19:46:18 2022
+Iter:    0/ 2000 loss:0.3894 0.1562 0.0001 0.2330 imps:1.5 Fin:Tue Jun  7 22:49:32 2022 lr: 0.0100
+Iter:   50/ 2000 loss:0.3646 0.1189 0.0001 0.2457 imps:7.1 Fin:Tue Jun  7 20:23:51 2022 lr: 0.0098
+Iter:  100/ 2000 loss:0.3599 0.1191 0.0001 0.2407 imps:7.3 Fin:Tue Jun  7 20:22:38 2022 lr: 0.0095
+Iter:  150/ 2000 loss:0.3874 0.1230 0.0000 0.2645 imps:7.4 Fin:Tue Jun  7 20:22:14 2022 lr: 0.0093
+Iter:  200/ 2000 loss:0.3654 0.1175 0.0000 0.2478 imps:7.5 Fin:Tue Jun  7 20:22:03 2022 lr: 0.0091
+Iter:  250/ 2000 loss:0.3500 0.1130 0.0000 0.2369 imps:7.5 Fin:Tue Jun  7 20:21:57 2022 lr: 0.0089
+Iter:  300/ 2000 loss:0.3942 0.1138 0.0000 0.2803 imps:7.5 Fin:Tue Jun  7 20:21:53 2022 lr: 0.0086
+Iter:  350/ 2000 loss:0.3376 0.1065 0.0000 0.2310 imps:7.5 Fin:Tue Jun  7 20:21:50 2022 lr: 0.0084
+Iter:  400/ 2000 loss:0.3297 0.1258 0.0000 0.2039 imps:7.5 Fin:Tue Jun  7 20:21:48 2022 lr: 0.0082
+Iter:  450/ 2000 loss:0.3530 0.1325 0.0000 0.2205 imps:7.5 Fin:Tue Jun  7 20:21:46 2022 lr: 0.0080
+Iter:  500/ 2000 loss:0.3886 0.1307 0.0000 0.2578 imps:7.5 Fin:Tue Jun  7 20:21:45 2022 lr: 0.0077
+Iter:  550/ 2000 loss:0.2769 0.1122 0.0000 0.1647 imps:7.5 Fin:Tue Jun  7 20:21:43 2022 lr: 0.0075
+Iter:  600/ 2000 loss:0.3184 0.1221 0.0000 0.1964 imps:7.5 Fin:Tue Jun  7 20:21:42 2022 lr: 0.0073
+Iter:  650/ 2000 loss:0.4115 0.1193 0.0000 0.2922 imps:7.5 Fin:Tue Jun  7 20:21:42 2022 lr: 0.0070
+Iter:  700/ 2000 loss:0.4548 0.1275 0.0000 0.3273 imps:7.5 Fin:Tue Jun  7 20:21:41 2022 lr: 0.0068
+Iter:  750/ 2000 loss:0.4483 0.1056 0.0000 0.3427 imps:7.5 Fin:Tue Jun  7 20:21:40 2022 lr: 0.0066
+Iter:  800/ 2000 loss:0.4820 0.1314 0.0000 0.3505 imps:7.5 Fin:Tue Jun  7 20:21:40 2022 lr: 0.0063
+Iter:  850/ 2000 loss:0.4695 0.1197 0.0000 0.3498 imps:7.5 Fin:Tue Jun  7 20:21:39 2022 lr: 0.0061
+Iter:  900/ 2000 loss:0.5033 0.1110 0.0000 0.3923 imps:7.5 Fin:Tue Jun  7 20:21:39 2022 lr: 0.0058
+Iter:  950/ 2000 loss:0.4957 0.1115 0.0000 0.3841 imps:7.5 Fin:Tue Jun  7 20:21:39 2022 lr: 0.0056
+Iter: 1000/ 2000 loss:0.4543 0.1208 0.0000 0.3336 imps:7.5 Fin:Tue Jun  7 20:21:39 2022 lr: 0.0054
+Iter: 1050/ 2000 loss:0.4616 0.1162 0.0000 0.3454 imps:7.5 Fin:Tue Jun  7 20:21:38 2022 lr: 0.0051
+Iter: 1100/ 2000 loss:0.5168 0.1163 0.0000 0.4004 imps:7.5 Fin:Tue Jun  7 20:21:38 2022 lr: 0.0049
+Iter: 1150/ 2000 loss:0.5019 0.1194 0.0000 0.3826 imps:7.5 Fin:Tue Jun  7 20:21:37 2022 lr: 0.0046
+Iter: 1200/ 2000 loss:0.4893 0.1158 0.0000 0.3735 imps:7.5 Fin:Tue Jun  7 20:21:37 2022 lr: 0.0044
+Iter: 1250/ 2000 loss:0.5046 0.1156 0.0000 0.3890 imps:7.5 Fin:Tue Jun  7 20:21:37 2022 lr: 0.0041
+Iter: 1300/ 2000 loss:0.5020 0.1145 0.0000 0.3875 imps:7.6 Fin:Tue Jun  7 20:21:37 2022 lr: 0.0039
+Iter: 1350/ 2000 loss:0.5140 0.1258 0.0000 0.3883 imps:7.6 Fin:Tue Jun  7 20:21:37 2022 lr: 0.0036
+Iter: 1400/ 2000 loss:0.4644 0.1219 0.0000 0.3425 imps:7.6 Fin:Tue Jun  7 20:21:36 2022 lr: 0.0034
+Iter: 1450/ 2000 loss:0.4727 0.1146 0.0000 0.3580 imps:7.6 Fin:Tue Jun  7 20:21:36 2022 lr: 0.0031
+Iter: 1500/ 2000 loss:0.4923 0.1209 0.0000 0.3713 imps:7.6 Fin:Tue Jun  7 20:21:36 2022 lr: 0.0029
+Iter: 1550/ 2000 loss:0.4607 0.0996 0.0000 0.3612 imps:7.6 Fin:Tue Jun  7 20:21:36 2022 lr: 0.0026
+Iter: 1600/ 2000 loss:0.4887 0.1247 0.0000 0.3640 imps:7.6 Fin:Tue Jun  7 20:21:36 2022 lr: 0.0023
+Iter: 1650/ 2000 loss:0.5011 0.1109 0.0000 0.3901 imps:7.6 Fin:Tue Jun  7 20:21:36 2022 lr: 0.0021
+Iter: 1700/ 2000 loss:0.5016 0.1171 0.0000 0.3844 imps:7.6 Fin:Tue Jun  7 20:21:36 2022 lr: 0.0018
+Iter: 1750/ 2000 loss:0.4987 0.1205 0.0000 0.3782 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0015
+Iter: 1800/ 2000 loss:0.4845 0.1155 0.0000 0.3689 imps:7.6 Fin:Tue Jun  7 20:21:36 2022 lr: 0.0013
+Iter: 1850/ 2000 loss:0.4850 0.1137 0.0000 0.3713 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0010
+Iter: 1900/ 2000 loss:0.4875 0.1161 0.0000 0.3714 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0007
+Iter: 1950/ 2000 loss:0.4833 0.1120 0.0000 0.3713 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0004
+Iter: 2000/ 2000 loss:0.5008 0.1177 0.0000 0.3831 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2050/ 2000 loss:0.4907 0.1126 0.0000 0.3781 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2100/ 2000 loss:0.4832 0.1061 0.0000 0.3772 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2150/ 2000 loss:0.4872 0.1113 0.0000 0.3760 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2200/ 2000 loss:0.5011 0.1218 0.0000 0.3793 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2250/ 2000 loss:0.5093 0.1209 0.0000 0.3884 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2300/ 2000 loss:0.4848 0.1115 0.0000 0.3733 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2350/ 2000 loss:0.4920 0.1109 0.0000 0.3812 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2400/ 2000 loss:0.4904 0.1147 0.0000 0.3757 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2450/ 2000 loss:0.5034 0.1197 0.0000 0.3837 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2500/ 2000 loss:0.4996 0.1190 0.0000 0.3805 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2550/ 2000 loss:0.4911 0.1116 0.0000 0.3794 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2600/ 2000 loss:0.5015 0.1159 0.0000 0.3856 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2650/ 2000 loss:0.4858 0.1103 0.0000 0.3755 imps:7.6 Fin:Tue Jun  7 20:21:35 2022 lr: 0.0000
+Iter: 2700/ 2000 loss:0.4958 0.1132 0.0000 0.3825 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 2750/ 2000 loss:0.5078 0.1220 0.0000 0.3858 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 2800/ 2000 loss:0.4986 0.1257 0.0000 0.3729 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 2850/ 2000 loss:0.5005 0.1176 0.0000 0.3829 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 2900/ 2000 loss:0.5264 0.1305 0.0000 0.3959 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 2950/ 2000 loss:0.4867 0.1095 0.0000 0.3772 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3000/ 2000 loss:0.4842 0.1015 0.0000 0.3828 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3050/ 2000 loss:0.4915 0.1183 0.0000 0.3732 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3100/ 2000 loss:0.4976 0.1178 0.0000 0.3798 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3150/ 2000 loss:0.4988 0.1190 0.0000 0.3798 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3200/ 2000 loss:0.4963 0.1187 0.0000 0.3775 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3250/ 2000 loss:0.5066 0.1242 0.0000 0.3824 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3300/ 2000 loss:0.5004 0.1170 0.0000 0.3834 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3350/ 2000 loss:0.5014 0.1163 0.0000 0.3852 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3400/ 2000 loss:0.4937 0.1186 0.0000 0.3751 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3450/ 2000 loss:0.5115 0.1299 0.0000 0.3816 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3500/ 2000 loss:0.5046 0.1256 0.0000 0.3789 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3550/ 2000 loss:0.5187 0.1164 0.0000 0.4023 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3600/ 2000 loss:0.4978 0.1143 0.0000 0.3835 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3650/ 2000 loss:0.4987 0.1251 0.0000 0.3736 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3700/ 2000 loss:0.4792 0.1045 0.0000 0.3747 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3750/ 2000 loss:0.5019 0.1161 0.0000 0.3858 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3800/ 2000 loss:0.4843 0.1173 0.0000 0.3670 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3850/ 2000 loss:0.4740 0.1087 0.0000 0.3653 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3900/ 2000 loss:0.4887 0.1154 0.0000 0.3733 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 3950/ 2000 loss:0.5017 0.1248 0.0000 0.3769 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4000/ 2000 loss:0.4857 0.1101 0.0000 0.3755 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4050/ 2000 loss:0.4936 0.1163 0.0000 0.3773 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4100/ 2000 loss:0.5092 0.1283 0.0000 0.3808 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4150/ 2000 loss:0.4911 0.1268 0.0000 0.3643 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4200/ 2000 loss:0.4891 0.1143 0.0000 0.3747 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4250/ 2000 loss:0.4866 0.1053 0.0000 0.3814 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4300/ 2000 loss:0.4917 0.1107 0.0000 0.3811 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4350/ 2000 loss:0.5008 0.1218 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4400/ 2000 loss:0.5033 0.1185 0.0000 0.3849 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4450/ 2000 loss:0.5091 0.1253 0.0000 0.3838 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4500/ 2000 loss:0.4974 0.1231 0.0000 0.3743 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4550/ 2000 loss:0.4978 0.1162 0.0000 0.3816 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4600/ 2000 loss:0.4961 0.1159 0.0000 0.3802 imps:7.6 Fin:Tue Jun  7 20:21:34 2022 lr: 0.0000
+Iter: 4650/ 2000 loss:0.5034 0.1191 0.0000 0.3843 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 4700/ 2000 loss:0.4923 0.1121 0.0000 0.3802 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 4750/ 2000 loss:0.5002 0.1193 0.0000 0.3809 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 4800/ 2000 loss:0.4914 0.1135 0.0000 0.3779 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 4850/ 2000 loss:0.4920 0.1226 0.0000 0.3694 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 4900/ 2000 loss:0.5112 0.1227 0.0000 0.3885 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 4950/ 2000 loss:0.5018 0.1198 0.0000 0.3820 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5000/ 2000 loss:0.4901 0.1175 0.0000 0.3726 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5050/ 2000 loss:0.4845 0.1146 0.0000 0.3699 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5100/ 2000 loss:0.4896 0.1192 0.0000 0.3704 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5150/ 2000 loss:0.5088 0.1236 0.0000 0.3852 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5200/ 2000 loss:0.4934 0.1138 0.0000 0.3796 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5250/ 2000 loss:0.4769 0.1018 0.0000 0.3751 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5300/ 2000 loss:0.4856 0.1138 0.0000 0.3718 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5350/ 2000 loss:0.4904 0.1140 0.0000 0.3764 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5400/ 2000 loss:0.5115 0.1255 0.0000 0.3860 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5450/ 2000 loss:0.4897 0.1154 0.0000 0.3743 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5500/ 2000 loss:0.4922 0.1132 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5550/ 2000 loss:0.5240 0.1289 0.0000 0.3951 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5600/ 2000 loss:0.4904 0.1121 0.0000 0.3783 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5650/ 2000 loss:0.4957 0.1175 0.0000 0.3782 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5700/ 2000 loss:0.4891 0.1106 0.0000 0.3786 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5750/ 2000 loss:0.5076 0.1210 0.0000 0.3866 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5800/ 2000 loss:0.5048 0.1170 0.0000 0.3877 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5850/ 2000 loss:0.4965 0.1110 0.0000 0.3854 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5900/ 2000 loss:0.5046 0.1225 0.0000 0.3822 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 5950/ 2000 loss:0.4777 0.1013 0.0000 0.3764 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6000/ 2000 loss:0.4973 0.1149 0.0000 0.3824 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6050/ 2000 loss:0.5004 0.1185 0.0000 0.3819 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6100/ 2000 loss:0.4982 0.1228 0.0000 0.3754 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6150/ 2000 loss:0.4918 0.1153 0.0000 0.3766 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6200/ 2000 loss:0.4860 0.1160 0.0000 0.3701 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6250/ 2000 loss:0.4910 0.1140 0.0000 0.3769 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6300/ 2000 loss:0.4879 0.1134 0.0000 0.3745 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6350/ 2000 loss:0.4834 0.1124 0.0000 0.3710 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6400/ 2000 loss:0.5019 0.1205 0.0000 0.3814 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6450/ 2000 loss:0.5024 0.1168 0.0000 0.3855 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6500/ 2000 loss:0.5088 0.1295 0.0000 0.3793 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6550/ 2000 loss:0.4850 0.1109 0.0000 0.3742 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6600/ 2000 loss:0.4884 0.1101 0.0000 0.3783 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6650/ 2000 loss:0.5192 0.1323 0.0000 0.3870 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6700/ 2000 loss:0.5090 0.1319 0.0000 0.3771 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6750/ 2000 loss:0.4802 0.1077 0.0000 0.3725 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6800/ 2000 loss:0.4991 0.1178 0.0000 0.3812 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6850/ 2000 loss:0.4841 0.1145 0.0000 0.3696 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6900/ 2000 loss:0.4857 0.1102 0.0000 0.3755 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 6950/ 2000 loss:0.4912 0.1078 0.0000 0.3834 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7000/ 2000 loss:0.4882 0.1112 0.0000 0.3770 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7050/ 2000 loss:0.4959 0.1157 0.0000 0.3802 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7100/ 2000 loss:0.4942 0.1169 0.0000 0.3774 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7150/ 2000 loss:0.4853 0.1195 0.0000 0.3657 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7200/ 2000 loss:0.4797 0.1062 0.0000 0.3736 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7250/ 2000 loss:0.4908 0.1067 0.0000 0.3841 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7300/ 2000 loss:0.4915 0.1114 0.0000 0.3801 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7350/ 2000 loss:0.4934 0.1123 0.0000 0.3811 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7400/ 2000 loss:0.5009 0.1249 0.0000 0.3760 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7450/ 2000 loss:0.4906 0.1113 0.0000 0.3792 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7500/ 2000 loss:0.5011 0.1161 0.0000 0.3850 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7550/ 2000 loss:0.4817 0.1100 0.0000 0.3717 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7600/ 2000 loss:0.4867 0.1095 0.0000 0.3772 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7650/ 2000 loss:0.5000 0.1132 0.0000 0.3868 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7700/ 2000 loss:0.5066 0.1263 0.0000 0.3803 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7750/ 2000 loss:0.4934 0.1081 0.0000 0.3854 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7800/ 2000 loss:0.5089 0.1267 0.0000 0.3822 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7850/ 2000 loss:0.5011 0.1147 0.0000 0.3864 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7900/ 2000 loss:0.5067 0.1260 0.0000 0.3807 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 7950/ 2000 loss:0.4877 0.1053 0.0000 0.3824 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8000/ 2000 loss:0.4781 0.1066 0.0000 0.3715 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8050/ 2000 loss:0.4884 0.1044 0.0000 0.3840 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8100/ 2000 loss:0.5059 0.1185 0.0000 0.3874 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8150/ 2000 loss:0.4899 0.1156 0.0000 0.3743 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8200/ 2000 loss:0.5085 0.1221 0.0000 0.3864 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8250/ 2000 loss:0.4950 0.1080 0.0000 0.3870 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8300/ 2000 loss:0.5031 0.1154 0.0000 0.3877 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8350/ 2000 loss:0.4986 0.1168 0.0000 0.3817 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8400/ 2000 loss:0.4978 0.1222 0.0000 0.3757 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8450/ 2000 loss:0.4997 0.1130 0.0000 0.3868 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8500/ 2000 loss:0.4851 0.1164 0.0000 0.3687 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8550/ 2000 loss:0.4883 0.1070 0.0000 0.3813 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8600/ 2000 loss:0.5096 0.1248 0.0000 0.3849 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8650/ 2000 loss:0.4948 0.1105 0.0000 0.3844 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8700/ 2000 loss:0.4997 0.1163 0.0000 0.3834 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8750/ 2000 loss:0.4945 0.1186 0.0000 0.3759 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8800/ 2000 loss:0.4844 0.1164 0.0000 0.3680 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8850/ 2000 loss:0.4977 0.1103 0.0000 0.3873 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8900/ 2000 loss:0.5188 0.1315 0.0000 0.3872 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 8950/ 2000 loss:0.4925 0.1120 0.0000 0.3805 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9000/ 2000 loss:0.4973 0.1199 0.0000 0.3773 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9050/ 2000 loss:0.5014 0.1206 0.0000 0.3808 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9100/ 2000 loss:0.5140 0.1228 0.0000 0.3912 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9150/ 2000 loss:0.4990 0.1219 0.0000 0.3771 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9200/ 2000 loss:0.5062 0.1169 0.0000 0.3893 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9250/ 2000 loss:0.4889 0.1159 0.0000 0.3730 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9300/ 2000 loss:0.5097 0.1205 0.0000 0.3893 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9350/ 2000 loss:0.5125 0.1246 0.0000 0.3879 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9400/ 2000 loss:0.5113 0.1290 0.0000 0.3823 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+
+Iter: 9450/ 2000 loss:0.4991 0.1224 0.0000 0.3767 imps:7.4 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9500/ 2000 loss:0.4975 0.1176 0.0000 0.3799 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9550/ 2000 loss:0.4901 0.1152 0.0000 0.3749 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9600/ 2000 loss:0.5050 0.1277 0.0000 0.3773 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9650/ 2000 loss:0.4884 0.1226 0.0000 0.3658 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9700/ 2000 loss:0.4828 0.1129 0.0000 0.3700 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9750/ 2000 loss:0.4853 0.1142 0.0000 0.3711 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9800/ 2000 loss:0.5005 0.1169 0.0000 0.3836 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9850/ 2000 loss:0.4858 0.1104 0.0000 0.3754 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9900/ 2000 loss:0.4883 0.1134 0.0000 0.3748 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter: 9950/ 2000 loss:0.4966 0.1118 0.0000 0.3848 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10000/ 2000 loss:0.4769 0.1075 0.0000 0.3694 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10050/ 2000 loss:0.4928 0.1137 0.0000 0.3791 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10100/ 2000 loss:0.4794 0.1142 0.0000 0.3652 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10150/ 2000 loss:0.4964 0.1129 0.0000 0.3834 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10200/ 2000 loss:0.4959 0.1251 0.0000 0.3709 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10250/ 2000 loss:0.4849 0.1095 0.0000 0.3754 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10300/ 2000 loss:0.5075 0.1221 0.0000 0.3854 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10350/ 2000 loss:0.5004 0.1190 0.0000 0.3814 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10400/ 2000 loss:0.4935 0.1225 0.0000 0.3710 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10450/ 2000 loss:0.4972 0.1174 0.0000 0.3798 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10500/ 2000 loss:0.4962 0.1193 0.0000 0.3769 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10550/ 2000 loss:0.4750 0.1165 0.0000 0.3585 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10600/ 2000 loss:0.4915 0.1167 0.0000 0.3748 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10650/ 2000 loss:0.4998 0.1209 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10700/ 2000 loss:0.5180 0.1324 0.0000 0.3857 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10750/ 2000 loss:0.5032 0.1169 0.0000 0.3862 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10800/ 2000 loss:0.4972 0.1173 0.0000 0.3799 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10850/ 2000 loss:0.5110 0.1237 0.0000 0.3873 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10900/ 2000 loss:0.4829 0.1126 0.0000 0.3703 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:10950/ 2000 loss:0.5083 0.1139 0.0000 0.3944 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11000/ 2000 loss:0.5097 0.1295 0.0000 0.3802 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11050/ 2000 loss:0.5037 0.1242 0.0000 0.3794 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11100/ 2000 loss:0.4962 0.1143 0.0000 0.3818 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11150/ 2000 loss:0.4965 0.1159 0.0000 0.3806 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11200/ 2000 loss:0.4972 0.1151 0.0000 0.3821 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11250/ 2000 loss:0.5059 0.1159 0.0000 0.3899 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11300/ 2000 loss:0.4879 0.1118 0.0000 0.3761 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11350/ 2000 loss:0.4995 0.1144 0.0000 0.3852 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11400/ 2000 loss:0.5020 0.1172 0.0000 0.3848 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11450/ 2000 loss:0.4900 0.1120 0.0000 0.3780 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11500/ 2000 loss:0.4909 0.1153 0.0000 0.3756 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11550/ 2000 loss:0.5039 0.1230 0.0000 0.3809 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11600/ 2000 loss:0.5094 0.1254 0.0000 0.3840 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11650/ 2000 loss:0.5030 0.1262 0.0000 0.3768 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11700/ 2000 loss:0.4921 0.1123 0.0000 0.3798 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11750/ 2000 loss:0.4930 0.1115 0.0000 0.3815 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11800/ 2000 loss:0.5043 0.1237 0.0000 0.3806 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11850/ 2000 loss:0.5020 0.1147 0.0000 0.3873 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11900/ 2000 loss:0.4900 0.1223 0.0000 0.3677 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:11950/ 2000 loss:0.4866 0.1151 0.0000 0.3715 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12000/ 2000 loss:0.4904 0.1128 0.0000 0.3776 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12050/ 2000 loss:0.5176 0.1355 0.0000 0.3822 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12100/ 2000 loss:0.4812 0.1102 0.0000 0.3710 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12150/ 2000 loss:0.5065 0.1272 0.0000 0.3793 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12200/ 2000 loss:0.4933 0.1081 0.0000 0.3851 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12250/ 2000 loss:0.4906 0.1168 0.0000 0.3738 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12300/ 2000 loss:0.5050 0.1223 0.0000 0.3827 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12350/ 2000 loss:0.4914 0.1152 0.0000 0.3762 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12400/ 2000 loss:0.5008 0.1151 0.0000 0.3857 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12450/ 2000 loss:0.4943 0.1133 0.0000 0.3810 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12500/ 2000 loss:0.4988 0.1117 0.0000 0.3871 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12550/ 2000 loss:0.5164 0.1256 0.0000 0.3908 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12600/ 2000 loss:0.4900 0.1108 0.0000 0.3793 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12650/ 2000 loss:0.4923 0.1077 0.0000 0.3845 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12700/ 2000 loss:0.4927 0.1138 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12750/ 2000 loss:0.4815 0.1065 0.0000 0.3750 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12800/ 2000 loss:0.5114 0.1200 0.0000 0.3914 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12850/ 2000 loss:0.5039 0.1175 0.0000 0.3864 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12900/ 2000 loss:0.4958 0.1119 0.0000 0.3839 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:12950/ 2000 loss:0.5030 0.1171 0.0000 0.3859 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13000/ 2000 loss:0.4979 0.1142 0.0000 0.3837 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13050/ 2000 loss:0.4874 0.1139 0.0000 0.3735 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13100/ 2000 loss:0.4851 0.1086 0.0000 0.3765 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13150/ 2000 loss:0.4883 0.1121 0.0000 0.3763 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13200/ 2000 loss:0.5007 0.1210 0.0000 0.3797 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13250/ 2000 loss:0.4988 0.1194 0.0000 0.3794 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13300/ 2000 loss:0.4873 0.1106 0.0000 0.3766 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13350/ 2000 loss:0.5074 0.1283 0.0000 0.3791 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13400/ 2000 loss:0.5034 0.1187 0.0000 0.3848 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13450/ 2000 loss:0.4998 0.1157 0.0000 0.3842 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13500/ 2000 loss:0.4845 0.1166 0.0000 0.3679 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13550/ 2000 loss:0.4952 0.1201 0.0000 0.3751 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13600/ 2000 loss:0.4926 0.1126 0.0000 0.3799 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13650/ 2000 loss:0.4981 0.1178 0.0000 0.3803 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13700/ 2000 loss:0.4937 0.1137 0.0000 0.3800 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13750/ 2000 loss:0.4978 0.1212 0.0000 0.3766 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13800/ 2000 loss:0.4913 0.1164 0.0000 0.3749 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13850/ 2000 loss:0.4931 0.1186 0.0000 0.3746 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13900/ 2000 loss:0.4946 0.1198 0.0000 0.3749 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:13950/ 2000 loss:0.5047 0.1195 0.0000 0.3852 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14000/ 2000 loss:0.5052 0.1171 0.0000 0.3881 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14050/ 2000 loss:0.4821 0.1127 0.0000 0.3694 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14100/ 2000 loss:0.4882 0.1196 0.0000 0.3685 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14150/ 2000 loss:0.5105 0.1171 0.0000 0.3935 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14200/ 2000 loss:0.5059 0.1188 0.0000 0.3871 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14250/ 2000 loss:0.4928 0.1028 0.0000 0.3900 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14300/ 2000 loss:0.4950 0.1184 0.0000 0.3766 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14350/ 2000 loss:0.5019 0.1185 0.0000 0.3833 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14400/ 2000 loss:0.4965 0.1162 0.0000 0.3803 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14450/ 2000 loss:0.4869 0.1080 0.0000 0.3789 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14500/ 2000 loss:0.4994 0.1186 0.0000 0.3808 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14550/ 2000 loss:0.5002 0.1166 0.0000 0.3836 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14600/ 2000 loss:0.5000 0.1177 0.0000 0.3823 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14650/ 2000 loss:0.4870 0.1132 0.0000 0.3738 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14700/ 2000 loss:0.4828 0.1057 0.0000 0.3771 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14750/ 2000 loss:0.4923 0.1079 0.0000 0.3844 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14800/ 2000 loss:0.4939 0.1212 0.0000 0.3726 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14850/ 2000 loss:0.4965 0.1199 0.0000 0.3765 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14900/ 2000 loss:0.5028 0.1268 0.0000 0.3760 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:14950/ 2000 loss:0.4977 0.1180 0.0000 0.3797 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15000/ 2000 loss:0.5026 0.1174 0.0000 0.3852 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15050/ 2000 loss:0.4962 0.1154 0.0000 0.3808 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15100/ 2000 loss:0.4994 0.1165 0.0000 0.3829 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15150/ 2000 loss:0.4974 0.1150 0.0000 0.3823 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15200/ 2000 loss:0.5223 0.1310 0.0000 0.3913 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15250/ 2000 loss:0.4890 0.1152 0.0000 0.3738 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15300/ 2000 loss:0.4775 0.1116 0.0000 0.3659 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15350/ 2000 loss:0.5039 0.1144 0.0000 0.3895 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15400/ 2000 loss:0.4939 0.1132 0.0000 0.3807 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15450/ 2000 loss:0.4910 0.1162 0.0000 0.3748 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15500/ 2000 loss:0.4836 0.1140 0.0000 0.3696 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15550/ 2000 loss:0.4858 0.0959 0.0000 0.3900 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15600/ 2000 loss:0.4850 0.1126 0.0000 0.3725 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15650/ 2000 loss:0.4963 0.1165 0.0000 0.3797 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15700/ 2000 loss:0.4823 0.1048 0.0000 0.3775 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15750/ 2000 loss:0.5004 0.1141 0.0000 0.3862 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15800/ 2000 loss:0.5149 0.1111 0.0000 0.4038 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15850/ 2000 loss:0.5019 0.1149 0.0000 0.3870 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15900/ 2000 loss:0.5005 0.1087 0.0000 0.3918 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:15950/ 2000 loss:0.5134 0.1216 0.0000 0.3918 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16000/ 2000 loss:0.5002 0.1119 0.0000 0.3883 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16050/ 2000 loss:0.5120 0.1240 0.0000 0.3879 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16100/ 2000 loss:0.4946 0.1121 0.0000 0.3825 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16150/ 2000 loss:0.4896 0.1103 0.0000 0.3792 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16200/ 2000 loss:0.4883 0.1161 0.0000 0.3722 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16250/ 2000 loss:0.5074 0.1180 0.0000 0.3894 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16300/ 2000 loss:0.4963 0.1075 0.0000 0.3887 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16350/ 2000 loss:0.4940 0.1122 0.0000 0.3818 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16400/ 2000 loss:0.4883 0.1143 0.0000 0.3739 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16450/ 2000 loss:0.4941 0.1181 0.0000 0.3761 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16500/ 2000 loss:0.4916 0.1152 0.0000 0.3763 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16550/ 2000 loss:0.4958 0.1200 0.0000 0.3759 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16600/ 2000 loss:0.4988 0.1206 0.0000 0.3783 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16650/ 2000 loss:0.5009 0.1222 0.0000 0.3786 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16700/ 2000 loss:0.4967 0.1164 0.0000 0.3804 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16750/ 2000 loss:0.4938 0.1084 0.0000 0.3854 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16800/ 2000 loss:0.4930 0.1131 0.0000 0.3798 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16850/ 2000 loss:0.4875 0.1083 0.0000 0.3793 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16900/ 2000 loss:0.4970 0.1180 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:16950/ 2000 loss:0.4898 0.1075 0.0000 0.3823 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17000/ 2000 loss:0.5058 0.1258 0.0000 0.3801 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17050/ 2000 loss:0.5059 0.1147 0.0000 0.3912 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17100/ 2000 loss:0.4916 0.1125 0.0000 0.3791 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17150/ 2000 loss:0.5152 0.1271 0.0000 0.3882 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17200/ 2000 loss:0.4894 0.1149 0.0000 0.3745 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17250/ 2000 loss:0.4924 0.1173 0.0000 0.3751 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17300/ 2000 loss:0.4922 0.1165 0.0000 0.3756 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17350/ 2000 loss:0.5215 0.1272 0.0000 0.3944 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17400/ 2000 loss:0.4906 0.1080 0.0000 0.3826 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17450/ 2000 loss:0.4917 0.1168 0.0000 0.3749 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17500/ 2000 loss:0.4855 0.1052 0.0000 0.3803 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17550/ 2000 loss:0.4831 0.1145 0.0000 0.3686 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17600/ 2000 loss:0.5022 0.1086 0.0000 0.3936 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17650/ 2000 loss:0.5137 0.1335 0.0000 0.3802 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17700/ 2000 loss:0.5063 0.1210 0.0000 0.3853 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17750/ 2000 loss:0.5028 0.1289 0.0000 0.3739 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17800/ 2000 loss:0.5017 0.1187 0.0000 0.3829 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17850/ 2000 loss:0.5018 0.1119 0.0000 0.3900 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17900/ 2000 loss:0.4937 0.1126 0.0000 0.3811 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:17950/ 2000 loss:0.4851 0.1094 0.0000 0.3757 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18000/ 2000 loss:0.5006 0.1034 0.0000 0.3972 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18050/ 2000 loss:0.4951 0.1159 0.0000 0.3793 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18100/ 2000 loss:0.5020 0.1170 0.0000 0.3849 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18150/ 2000 loss:0.5063 0.1144 0.0000 0.3919 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18200/ 2000 loss:0.4927 0.1106 0.0000 0.3822 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18250/ 2000 loss:0.4898 0.1117 0.0000 0.3781 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18300/ 2000 loss:0.4951 0.1135 0.0000 0.3817 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18350/ 2000 loss:0.5043 0.1237 0.0000 0.3805 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18400/ 2000 loss:0.5008 0.1187 0.0000 0.3821 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18450/ 2000 loss:0.5102 0.1239 0.0000 0.3863 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18500/ 2000 loss:0.4935 0.1198 0.0000 0.3737 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18550/ 2000 loss:0.4886 0.1118 0.0000 0.3768 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18600/ 2000 loss:0.5129 0.1222 0.0000 0.3907 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18650/ 2000 loss:0.5017 0.1224 0.0000 0.3792 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18700/ 2000 loss:0.5029 0.1203 0.0000 0.3826 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18750/ 2000 loss:0.4995 0.1147 0.0000 0.3848 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18800/ 2000 loss:0.4832 0.1103 0.0000 0.3729 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+
+Iter:18850/ 2000 loss:0.5074 0.1188 0.0000 0.3885 imps:7.3 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18900/ 2000 loss:0.4998 0.1281 0.0000 0.3717 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:18950/ 2000 loss:0.4964 0.1205 0.0000 0.3759 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19000/ 2000 loss:0.4830 0.1100 0.0000 0.3731 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19050/ 2000 loss:0.5050 0.1205 0.0000 0.3845 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19100/ 2000 loss:0.4963 0.1127 0.0000 0.3836 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19150/ 2000 loss:0.5068 0.1206 0.0000 0.3862 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19200/ 2000 loss:0.4979 0.1147 0.0000 0.3832 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19250/ 2000 loss:0.4980 0.1220 0.0000 0.3761 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19300/ 2000 loss:0.4929 0.1160 0.0000 0.3769 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19350/ 2000 loss:0.4957 0.1118 0.0000 0.3840 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19400/ 2000 loss:0.4937 0.1127 0.0000 0.3810 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19450/ 2000 loss:0.4939 0.1107 0.0000 0.3832 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19500/ 2000 loss:0.4968 0.1120 0.0000 0.3848 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19550/ 2000 loss:0.4992 0.1193 0.0000 0.3799 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19600/ 2000 loss:0.4876 0.1143 0.0000 0.3733 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19650/ 2000 loss:0.5011 0.1200 0.0000 0.3810 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19700/ 2000 loss:0.5192 0.1269 0.0000 0.3924 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19750/ 2000 loss:0.4868 0.1146 0.0000 0.3722 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19800/ 2000 loss:0.5017 0.1285 0.0000 0.3732 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19850/ 2000 loss:0.5033 0.1207 0.0000 0.3826 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19900/ 2000 loss:0.4875 0.1085 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:19950/ 2000 loss:0.5101 0.1286 0.0000 0.3816 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20000/ 2000 loss:0.4935 0.1054 0.0000 0.3881 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20050/ 2000 loss:0.4837 0.1112 0.0000 0.3725 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20100/ 2000 loss:0.4988 0.1291 0.0000 0.3698 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20150/ 2000 loss:0.4860 0.1212 0.0000 0.3648 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20200/ 2000 loss:0.5141 0.1237 0.0000 0.3904 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20250/ 2000 loss:0.4871 0.1096 0.0000 0.3775 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20300/ 2000 loss:0.4942 0.1114 0.0000 0.3829 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20350/ 2000 loss:0.4945 0.1112 0.0000 0.3833 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20400/ 2000 loss:0.4929 0.1140 0.0000 0.3789 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20450/ 2000 loss:0.4926 0.1167 0.0000 0.3759 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20500/ 2000 loss:0.4961 0.1160 0.0000 0.3800 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20550/ 2000 loss:0.5105 0.1243 0.0000 0.3862 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20600/ 2000 loss:0.5052 0.1199 0.0000 0.3853 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20650/ 2000 loss:0.4810 0.1035 0.0000 0.3774 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20700/ 2000 loss:0.5179 0.1205 0.0000 0.3974 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20750/ 2000 loss:0.4819 0.1136 0.0000 0.3683 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20800/ 2000 loss:0.4909 0.1045 0.0000 0.3864 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20850/ 2000 loss:0.4924 0.1199 0.0000 0.3725 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20900/ 2000 loss:0.5078 0.1246 0.0000 0.3832 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:20950/ 2000 loss:0.4849 0.1175 0.0000 0.3674 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21000/ 2000 loss:0.4859 0.1145 0.0000 0.3714 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21050/ 2000 loss:0.5038 0.1184 0.0000 0.3854 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21100/ 2000 loss:0.4862 0.1179 0.0000 0.3683 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21150/ 2000 loss:0.4996 0.1229 0.0000 0.3767 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21200/ 2000 loss:0.4978 0.1160 0.0000 0.3818 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21250/ 2000 loss:0.4868 0.1040 0.0000 0.3828 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21300/ 2000 loss:0.4902 0.1106 0.0000 0.3796 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21350/ 2000 loss:0.5005 0.1193 0.0000 0.3812 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21400/ 2000 loss:0.5087 0.1173 0.0000 0.3914 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21450/ 2000 loss:0.5046 0.1174 0.0000 0.3872 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21500/ 2000 loss:0.5256 0.1280 0.0000 0.3976 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21550/ 2000 loss:0.4919 0.1179 0.0000 0.3740 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21600/ 2000 loss:0.4936 0.1158 0.0000 0.3777 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21650/ 2000 loss:0.4935 0.1219 0.0000 0.3715 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21700/ 2000 loss:0.4932 0.1060 0.0000 0.3872 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21750/ 2000 loss:0.4902 0.1096 0.0000 0.3806 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21800/ 2000 loss:0.5002 0.1145 0.0000 0.3857 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21850/ 2000 loss:0.5153 0.1268 0.0000 0.3885 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21900/ 2000 loss:0.4971 0.1054 0.0000 0.3917 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:21950/ 2000 loss:0.4935 0.1091 0.0000 0.3843 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22000/ 2000 loss:0.5116 0.1230 0.0000 0.3886 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22050/ 2000 loss:0.4957 0.1148 0.0000 0.3810 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22100/ 2000 loss:0.4953 0.1106 0.0000 0.3847 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22150/ 2000 loss:0.5078 0.1113 0.0000 0.3964 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22200/ 2000 loss:0.4947 0.1197 0.0000 0.3750 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22250/ 2000 loss:0.5031 0.1206 0.0000 0.3824 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22300/ 2000 loss:0.4998 0.1225 0.0000 0.3773 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22350/ 2000 loss:0.4918 0.1034 0.0000 0.3884 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22400/ 2000 loss:0.5003 0.1219 0.0000 0.3784 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22450/ 2000 loss:0.5149 0.1254 0.0000 0.3895 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22500/ 2000 loss:0.4920 0.1066 0.0000 0.3854 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22550/ 2000 loss:0.5006 0.1198 0.0000 0.3808 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22600/ 2000 loss:0.4888 0.1057 0.0000 0.3832 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22650/ 2000 loss:0.4872 0.1144 0.0000 0.3728 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22700/ 2000 loss:0.5057 0.1223 0.0000 0.3833 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22750/ 2000 loss:0.5046 0.1157 0.0000 0.3889 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22800/ 2000 loss:0.5000 0.1193 0.0000 0.3806 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22850/ 2000 loss:0.5085 0.1164 0.0000 0.3920 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22900/ 2000 loss:0.4952 0.1122 0.0000 0.3829 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:22950/ 2000 loss:0.5044 0.1132 0.0000 0.3912 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23000/ 2000 loss:0.4989 0.1153 0.0000 0.3837 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23050/ 2000 loss:0.4841 0.1134 0.0000 0.3707 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23100/ 2000 loss:0.4809 0.1053 0.0000 0.3756 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23150/ 2000 loss:0.4896 0.1095 0.0000 0.3801 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23200/ 2000 loss:0.5076 0.1268 0.0000 0.3808 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23250/ 2000 loss:0.4959 0.1109 0.0000 0.3849 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23300/ 2000 loss:0.4912 0.1139 0.0000 0.3773 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23350/ 2000 loss:0.4938 0.1187 0.0000 0.3751 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23400/ 2000 loss:0.5142 0.1218 0.0000 0.3924 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23450/ 2000 loss:0.5003 0.1187 0.0000 0.3816 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23500/ 2000 loss:0.5021 0.1288 0.0000 0.3732 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23550/ 2000 loss:0.4942 0.1134 0.0000 0.3809 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23600/ 2000 loss:0.5070 0.1251 0.0000 0.3819 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23650/ 2000 loss:0.5067 0.1245 0.0000 0.3822 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23700/ 2000 loss:0.5108 0.1260 0.0000 0.3848 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23750/ 2000 loss:0.4963 0.1225 0.0000 0.3738 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23800/ 2000 loss:0.4864 0.1098 0.0000 0.3766 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23850/ 2000 loss:0.5085 0.1255 0.0000 0.3830 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23900/ 2000 loss:0.4857 0.1161 0.0000 0.3696 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:23950/ 2000 loss:0.4881 0.1146 0.0000 0.3734 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24000/ 2000 loss:0.4957 0.1144 0.0000 0.3813 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24050/ 2000 loss:0.4933 0.1152 0.0000 0.3781 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24100/ 2000 loss:0.4933 0.1128 0.0000 0.3805 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24150/ 2000 loss:0.5130 0.1144 0.0000 0.3986 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24200/ 2000 loss:0.4973 0.1136 0.0000 0.3837 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24250/ 2000 loss:0.5189 0.1142 0.0000 0.4047 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24300/ 2000 loss:0.5175 0.1310 0.0000 0.3865 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24350/ 2000 loss:0.5010 0.1258 0.0000 0.3752 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24400/ 2000 loss:0.4982 0.1159 0.0000 0.3823 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24450/ 2000 loss:0.4855 0.1058 0.0000 0.3797 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24500/ 2000 loss:0.5121 0.1199 0.0000 0.3921 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24550/ 2000 loss:0.5098 0.1161 0.0000 0.3936 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24600/ 2000 loss:0.5069 0.1177 0.0000 0.3892 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24650/ 2000 loss:0.4920 0.1096 0.0000 0.3824 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24700/ 2000 loss:0.5030 0.1148 0.0000 0.3882 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24750/ 2000 loss:0.5011 0.1205 0.0000 0.3806 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24800/ 2000 loss:0.5035 0.1279 0.0000 0.3757 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24850/ 2000 loss:0.5111 0.1284 0.0000 0.3827 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24900/ 2000 loss:0.4975 0.1187 0.0000 0.3788 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:24950/ 2000 loss:0.4898 0.1110 0.0000 0.3788 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25000/ 2000 loss:0.4841 0.1108 0.0000 0.3734 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25050/ 2000 loss:0.5030 0.1162 0.0000 0.3867 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25100/ 2000 loss:0.4814 0.1129 0.0000 0.3685 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25150/ 2000 loss:0.4950 0.1179 0.0000 0.3771 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25200/ 2000 loss:0.4874 0.1119 0.0000 0.3755 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25250/ 2000 loss:0.4985 0.1176 0.0000 0.3810 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25300/ 2000 loss:0.4971 0.1162 0.0000 0.3809 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25350/ 2000 loss:0.5030 0.1082 0.0000 0.3948 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25400/ 2000 loss:0.4902 0.1185 0.0000 0.3717 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25450/ 2000 loss:0.4838 0.1099 0.0000 0.3739 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25500/ 2000 loss:0.5030 0.1258 0.0000 0.3771 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25550/ 2000 loss:0.4986 0.1138 0.0000 0.3848 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25600/ 2000 loss:0.4912 0.1095 0.0000 0.3817 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25650/ 2000 loss:0.5032 0.1213 0.0000 0.3819 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25700/ 2000 loss:0.4998 0.1133 0.0000 0.3865 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25750/ 2000 loss:0.4907 0.1059 0.0000 0.3848 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25800/ 2000 loss:0.4896 0.1054 0.0000 0.3842 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25850/ 2000 loss:0.5042 0.1149 0.0000 0.3892 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25900/ 2000 loss:0.5062 0.1207 0.0000 0.3855 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:25950/ 2000 loss:0.5113 0.1153 0.0000 0.3959 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26000/ 2000 loss:0.5073 0.1221 0.0000 0.3851 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26050/ 2000 loss:0.4965 0.1148 0.0000 0.3817 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26100/ 2000 loss:0.5061 0.1162 0.0000 0.3899 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26150/ 2000 loss:0.4905 0.1114 0.0000 0.3791 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26200/ 2000 loss:0.4945 0.1176 0.0000 0.3769 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26250/ 2000 loss:0.5032 0.1152 0.0000 0.3880 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26300/ 2000 loss:0.4899 0.1151 0.0000 0.3748 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26350/ 2000 loss:0.4902 0.1034 0.0000 0.3869 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26400/ 2000 loss:0.4835 0.1154 0.0000 0.3682 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26450/ 2000 loss:0.4906 0.1124 0.0000 0.3782 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26500/ 2000 loss:0.4724 0.0983 0.0000 0.3741 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26550/ 2000 loss:0.5004 0.1147 0.0000 0.3857 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26600/ 2000 loss:0.4903 0.1210 0.0000 0.3693 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26650/ 2000 loss:0.4978 0.1202 0.0000 0.3776 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26700/ 2000 loss:0.4965 0.1140 0.0000 0.3825 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26750/ 2000 loss:0.4911 0.1122 0.0000 0.3789 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26800/ 2000 loss:0.4989 0.1182 0.0000 0.3806 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26850/ 2000 loss:0.4848 0.1133 0.0000 0.3715 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26900/ 2000 loss:0.4857 0.0991 0.0000 0.3866 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:26950/ 2000 loss:0.4920 0.1025 0.0000 0.3894 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27000/ 2000 loss:0.5082 0.1266 0.0000 0.3815 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27050/ 2000 loss:0.5071 0.1251 0.0000 0.3820 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27100/ 2000 loss:0.5021 0.1175 0.0000 0.3846 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27150/ 2000 loss:0.4986 0.1118 0.0000 0.3868 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27200/ 2000 loss:0.5128 0.1258 0.0000 0.3870 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27250/ 2000 loss:0.5107 0.1173 0.0000 0.3934 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27300/ 2000 loss:0.4899 0.1096 0.0000 0.3803 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27350/ 2000 loss:0.4888 0.1074 0.0000 0.3814 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27400/ 2000 loss:0.5049 0.1139 0.0000 0.3910 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27450/ 2000 loss:0.5230 0.1303 0.0000 0.3927 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27500/ 2000 loss:0.4981 0.1166 0.0000 0.3815 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27550/ 2000 loss:0.5050 0.1194 0.0000 0.3857 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27600/ 2000 loss:0.4874 0.1140 0.0000 0.3734 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27650/ 2000 loss:0.4948 0.1161 0.0000 0.3787 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27700/ 2000 loss:0.4989 0.1155 0.0000 0.3834 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27750/ 2000 loss:0.4881 0.1181 0.0000 0.3700 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27800/ 2000 loss:0.4987 0.1175 0.0000 0.3812 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27850/ 2000 loss:0.4890 0.1051 0.0000 0.3839 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27900/ 2000 loss:0.4987 0.1163 0.0000 0.3824 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:27950/ 2000 loss:0.5115 0.1251 0.0000 0.3864 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28000/ 2000 loss:0.5034 0.1210 0.0000 0.3824 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28050/ 2000 loss:0.5023 0.1278 0.0000 0.3745 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28100/ 2000 loss:0.4959 0.1123 0.0000 0.3835 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28150/ 2000 loss:0.4917 0.1100 0.0000 0.3816 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28200/ 2000 loss:0.5004 0.1104 0.0000 0.3900 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+
+Iter:28250/ 2000 loss:0.4870 0.1176 0.0000 0.3694 imps:7.0 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28300/ 2000 loss:0.5006 0.1190 0.0000 0.3816 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28350/ 2000 loss:0.4830 0.1198 0.0000 0.3632 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28400/ 2000 loss:0.5034 0.1120 0.0000 0.3914 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28450/ 2000 loss:0.4958 0.1130 0.0000 0.3829 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28500/ 2000 loss:0.4896 0.1139 0.0000 0.3757 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28550/ 2000 loss:0.4982 0.1203 0.0000 0.3779 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28600/ 2000 loss:0.4929 0.1161 0.0000 0.3767 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28650/ 2000 loss:0.4930 0.1115 0.0000 0.3815 imps:7.5 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28700/ 2000 loss:0.5075 0.1223 0.0000 0.3853 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28750/ 2000 loss:0.5106 0.1212 0.0000 0.3895 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28800/ 2000 loss:0.4955 0.1096 0.0000 0.3859 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28850/ 2000 loss:0.5047 0.1264 0.0000 0.3783 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28900/ 2000 loss:0.4722 0.1061 0.0000 0.3661 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:28950/ 2000 loss:0.5018 0.1062 0.0000 0.3956 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29000/ 2000 loss:0.4991 0.1176 0.0000 0.3815 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29050/ 2000 loss:0.4974 0.1102 0.0000 0.3872 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29100/ 2000 loss:0.4954 0.1225 0.0000 0.3729 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29150/ 2000 loss:0.5082 0.1236 0.0000 0.3846 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29200/ 2000 loss:0.4822 0.1082 0.0000 0.3740 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29250/ 2000 loss:0.4963 0.1159 0.0000 0.3805 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29300/ 2000 loss:0.4782 0.1032 0.0000 0.3749 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29350/ 2000 loss:0.4853 0.1151 0.0000 0.3701 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29400/ 2000 loss:0.4870 0.1070 0.0000 0.3800 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29450/ 2000 loss:0.4883 0.1073 0.0000 0.3810 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29500/ 2000 loss:0.5033 0.1241 0.0000 0.3792 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29550/ 2000 loss:0.4775 0.1010 0.0000 0.3765 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29600/ 2000 loss:0.4947 0.1125 0.0000 0.3822 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29650/ 2000 loss:0.4845 0.1126 0.0000 0.3719 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29700/ 2000 loss:0.5009 0.1078 0.0000 0.3930 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29750/ 2000 loss:0.5015 0.1155 0.0000 0.3860 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29800/ 2000 loss:0.5089 0.1231 0.0000 0.3858 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29850/ 2000 loss:0.4944 0.1197 0.0000 0.3746 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29900/ 2000 loss:0.5006 0.1127 0.0000 0.3879 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:29950/ 2000 loss:0.5069 0.1199 0.0000 0.3870 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30000/ 2000 loss:0.4966 0.1132 0.0000 0.3834 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30050/ 2000 loss:0.5064 0.1231 0.0000 0.3833 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30100/ 2000 loss:0.4966 0.1151 0.0000 0.3814 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30150/ 2000 loss:0.5121 0.1207 0.0000 0.3914 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30200/ 2000 loss:0.4961 0.1143 0.0000 0.3818 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30250/ 2000 loss:0.5055 0.1124 0.0000 0.3931 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30300/ 2000 loss:0.5018 0.1204 0.0000 0.3814 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30350/ 2000 loss:0.4813 0.1074 0.0000 0.3739 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30400/ 2000 loss:0.5130 0.1176 0.0000 0.3954 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30450/ 2000 loss:0.4996 0.1144 0.0000 0.3852 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30500/ 2000 loss:0.5147 0.1204 0.0000 0.3943 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30550/ 2000 loss:0.5114 0.1155 0.0000 0.3958 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30600/ 2000 loss:0.4904 0.1213 0.0000 0.3691 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30650/ 2000 loss:0.4929 0.1155 0.0000 0.3773 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30700/ 2000 loss:0.4919 0.1149 0.0000 0.3770 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30750/ 2000 loss:0.5030 0.1283 0.0000 0.3748 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30800/ 2000 loss:0.5074 0.1173 0.0000 0.3901 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30850/ 2000 loss:0.4930 0.1175 0.0000 0.3755 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30900/ 2000 loss:0.4882 0.1150 0.0000 0.3731 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:30950/ 2000 loss:0.4993 0.1214 0.0000 0.3779 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31000/ 2000 loss:0.5045 0.1129 0.0000 0.3916 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31050/ 2000 loss:0.5055 0.1135 0.0000 0.3920 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31100/ 2000 loss:0.5059 0.1200 0.0000 0.3859 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31150/ 2000 loss:0.5003 0.1160 0.0000 0.3843 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31200/ 2000 loss:0.5030 0.1231 0.0000 0.3799 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31250/ 2000 loss:0.5013 0.1157 0.0000 0.3856 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31300/ 2000 loss:0.4824 0.1128 0.0000 0.3695 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31350/ 2000 loss:0.5003 0.1191 0.0000 0.3812 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31400/ 2000 loss:0.4858 0.1134 0.0000 0.3724 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31450/ 2000 loss:0.5025 0.1184 0.0000 0.3840 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31500/ 2000 loss:0.5108 0.1150 0.0000 0.3958 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31550/ 2000 loss:0.4875 0.1100 0.0000 0.3775 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31600/ 2000 loss:0.4978 0.1227 0.0000 0.3751 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31650/ 2000 loss:0.5009 0.1169 0.0000 0.3841 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31700/ 2000 loss:0.5075 0.1188 0.0000 0.3887 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31750/ 2000 loss:0.4951 0.1113 0.0000 0.3838 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31800/ 2000 loss:0.4826 0.1143 0.0000 0.3683 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31850/ 2000 loss:0.5001 0.1065 0.0000 0.3936 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31900/ 2000 loss:0.4949 0.1159 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:31950/ 2000 loss:0.4799 0.1087 0.0000 0.3712 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32000/ 2000 loss:0.5111 0.1292 0.0000 0.3819 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32050/ 2000 loss:0.5035 0.1222 0.0000 0.3813 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32100/ 2000 loss:0.4991 0.1113 0.0000 0.3878 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32150/ 2000 loss:0.4983 0.1176 0.0000 0.3807 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32200/ 2000 loss:0.4960 0.1220 0.0000 0.3739 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32250/ 2000 loss:0.5050 0.1231 0.0000 0.3819 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32300/ 2000 loss:0.4981 0.1092 0.0000 0.3890 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32350/ 2000 loss:0.4990 0.1139 0.0000 0.3851 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32400/ 2000 loss:0.5092 0.1193 0.0000 0.3899 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32450/ 2000 loss:0.5015 0.1180 0.0000 0.3835 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32500/ 2000 loss:0.4992 0.1257 0.0000 0.3735 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32550/ 2000 loss:0.5051 0.1148 0.0000 0.3903 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32600/ 2000 loss:0.5014 0.1268 0.0000 0.3746 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32650/ 2000 loss:0.5063 0.1224 0.0000 0.3839 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32700/ 2000 loss:0.4892 0.1179 0.0000 0.3713 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32750/ 2000 loss:0.4945 0.1144 0.0000 0.3801 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32800/ 2000 loss:0.5005 0.1186 0.0000 0.3819 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32850/ 2000 loss:0.5043 0.1178 0.0000 0.3865 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32900/ 2000 loss:0.4994 0.1224 0.0000 0.3770 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:32950/ 2000 loss:0.5264 0.1192 0.0000 0.4073 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33000/ 2000 loss:0.5026 0.1234 0.0000 0.3792 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33050/ 2000 loss:0.5096 0.1179 0.0000 0.3918 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33100/ 2000 loss:0.5044 0.1171 0.0000 0.3874 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33150/ 2000 loss:0.4991 0.1095 0.0000 0.3896 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33200/ 2000 loss:0.5041 0.1187 0.0000 0.3853 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33250/ 2000 loss:0.5036 0.1129 0.0000 0.3907 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33300/ 2000 loss:0.4963 0.1099 0.0000 0.3864 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33350/ 2000 loss:0.5064 0.1207 0.0000 0.3857 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33400/ 2000 loss:0.4910 0.1136 0.0000 0.3774 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33450/ 2000 loss:0.4974 0.1140 0.0000 0.3835 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33500/ 2000 loss:0.4892 0.1133 0.0000 0.3759 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33550/ 2000 loss:0.5106 0.1269 0.0000 0.3836 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33600/ 2000 loss:0.5078 0.1162 0.0000 0.3917 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33650/ 2000 loss:0.5040 0.1190 0.0000 0.3849 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33700/ 2000 loss:0.5075 0.1100 0.0000 0.3975 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33750/ 2000 loss:0.5020 0.1115 0.0000 0.3905 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33800/ 2000 loss:0.5001 0.1132 0.0000 0.3870 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33850/ 2000 loss:0.5058 0.1240 0.0000 0.3818 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33900/ 2000 loss:0.4997 0.1150 0.0000 0.3847 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:33950/ 2000 loss:0.5076 0.1133 0.0000 0.3944 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34000/ 2000 loss:0.4898 0.1205 0.0000 0.3693 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34050/ 2000 loss:0.4989 0.1185 0.0000 0.3804 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34100/ 2000 loss:0.5125 0.1290 0.0000 0.3834 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34150/ 2000 loss:0.4884 0.1147 0.0000 0.3737 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34200/ 2000 loss:0.4972 0.1246 0.0000 0.3726 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34250/ 2000 loss:0.4991 0.1078 0.0000 0.3913 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34300/ 2000 loss:0.4988 0.1204 0.0000 0.3784 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34350/ 2000 loss:0.5020 0.1120 0.0000 0.3900 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34400/ 2000 loss:0.4976 0.1097 0.0000 0.3880 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34450/ 2000 loss:0.5027 0.1173 0.0000 0.3855 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34500/ 2000 loss:0.4873 0.1151 0.0000 0.3722 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34550/ 2000 loss:0.4974 0.1111 0.0000 0.3863 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34600/ 2000 loss:0.4978 0.1188 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34650/ 2000 loss:0.4934 0.1147 0.0000 0.3788 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34700/ 2000 loss:0.4988 0.1188 0.0000 0.3801 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34750/ 2000 loss:0.4748 0.1078 0.0000 0.3671 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34800/ 2000 loss:0.5097 0.1171 0.0000 0.3926 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34850/ 2000 loss:0.5141 0.1115 0.0000 0.4025 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34900/ 2000 loss:0.4987 0.1189 0.0000 0.3798 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:34950/ 2000 loss:0.4966 0.1097 0.0000 0.3869 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35000/ 2000 loss:0.4984 0.1164 0.0000 0.3819 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35050/ 2000 loss:0.4985 0.1185 0.0000 0.3800 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35100/ 2000 loss:0.4938 0.1156 0.0000 0.3781 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35150/ 2000 loss:0.4941 0.1141 0.0000 0.3799 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35200/ 2000 loss:0.5083 0.1237 0.0000 0.3846 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35250/ 2000 loss:0.4915 0.1089 0.0000 0.3825 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35300/ 2000 loss:0.5103 0.1259 0.0000 0.3844 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35350/ 2000 loss:0.5002 0.1178 0.0000 0.3824 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35400/ 2000 loss:0.5023 0.1187 0.0000 0.3836 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35450/ 2000 loss:0.5069 0.1227 0.0000 0.3842 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35500/ 2000 loss:0.4856 0.1095 0.0000 0.3760 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35550/ 2000 loss:0.5040 0.1265 0.0000 0.3775 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35600/ 2000 loss:0.5003 0.1222 0.0000 0.3781 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35650/ 2000 loss:0.4992 0.1263 0.0000 0.3729 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35700/ 2000 loss:0.5038 0.1168 0.0000 0.3871 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35750/ 2000 loss:0.4958 0.1133 0.0000 0.3825 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35800/ 2000 loss:0.5042 0.1240 0.0000 0.3802 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35850/ 2000 loss:0.5083 0.1227 0.0000 0.3855 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35900/ 2000 loss:0.4890 0.1076 0.0000 0.3813 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:35950/ 2000 loss:0.4855 0.1092 0.0000 0.3763 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36000/ 2000 loss:0.4960 0.1145 0.0000 0.3815 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36050/ 2000 loss:0.4954 0.1094 0.0000 0.3860 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36100/ 2000 loss:0.4901 0.1192 0.0000 0.3708 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36150/ 2000 loss:0.4930 0.1127 0.0000 0.3803 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36200/ 2000 loss:0.5047 0.1115 0.0000 0.3932 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36250/ 2000 loss:0.4957 0.1139 0.0000 0.3818 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36300/ 2000 loss:0.5069 0.1304 0.0000 0.3764 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36350/ 2000 loss:0.4942 0.1161 0.0000 0.3780 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36400/ 2000 loss:0.4915 0.1117 0.0000 0.3797 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36450/ 2000 loss:0.4884 0.1141 0.0000 0.3743 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36500/ 2000 loss:0.4918 0.1158 0.0000 0.3760 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36550/ 2000 loss:0.4905 0.1239 0.0000 0.3666 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36600/ 2000 loss:0.5031 0.1161 0.0000 0.3870 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36650/ 2000 loss:0.4931 0.1199 0.0000 0.3732 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36700/ 2000 loss:0.4933 0.1148 0.0000 0.3786 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36750/ 2000 loss:0.4893 0.1128 0.0000 0.3765 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36800/ 2000 loss:0.5044 0.1266 0.0000 0.3779 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36850/ 2000 loss:0.5019 0.1135 0.0000 0.3884 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36900/ 2000 loss:0.5042 0.1138 0.0000 0.3904 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:36950/ 2000 loss:0.4804 0.1038 0.0000 0.3766 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37000/ 2000 loss:0.5200 0.1230 0.0000 0.3970 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37050/ 2000 loss:0.5015 0.1148 0.0000 0.3867 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37100/ 2000 loss:0.4983 0.1207 0.0000 0.3776 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37150/ 2000 loss:0.5100 0.1147 0.0000 0.3953 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37200/ 2000 loss:0.4857 0.1091 0.0000 0.3765 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37250/ 2000 loss:0.4984 0.1179 0.0000 0.3805 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37300/ 2000 loss:0.5138 0.1211 0.0000 0.3927 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37350/ 2000 loss:0.4941 0.1092 0.0000 0.3849 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37400/ 2000 loss:0.4886 0.1096 0.0000 0.3790 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37450/ 2000 loss:0.4983 0.1124 0.0000 0.3859 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37500/ 2000 loss:0.4917 0.1151 0.0000 0.3766 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37550/ 2000 loss:0.4799 0.1087 0.0000 0.3711 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37600/ 2000 loss:0.5103 0.1189 0.0000 0.3913 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+Iter:37650/ 2000 loss:0.4937 0.1142 0.0000 0.3795 imps:7.6 Fin:Tue Jun  7 20:21:33 2022 lr: 0.0000
+

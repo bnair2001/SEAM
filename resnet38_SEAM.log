@@ -1,0 +1,886 @@
+{'batch_size': 8, 'max_epoches': 4, 'network': 'network.resnet38_SEAM', 'lr': 0.01, 'num_workers': 8, 'wt_dec': 0.0005, 'train_list': 'voc12/train_list.txt', 'val_list': 'voc12/valid_list.txt', 'session_name': 'resnet38_SEAM', 'crop_size': 448, 'weights': 'SEAM_model/resnet38_SEAM.pth', 'voc12_root': '/home/bnair/data/chest14', 'tblog_dir': './tblog'}
+Net(
+  (conv1a): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (b2): ResBlock(
+    (bn_branch2a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b2_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b2_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b3): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b3_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b3_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b4_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_3): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_4): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_5): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b5): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (conv_branch1): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (b5_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+  )
+  (b5_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+  )
+  (b6): ResBlock_bot(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b1): Dropout2d(p=0.3, inplace=False)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4), bias=False)
+    (bn_branch2b2): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b2): Dropout2d(p=0.3, inplace=False)
+    (conv_branch2b2): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (conv_branch1): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (b7): ResBlock_bot(
+    (bn_branch2a): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(2048, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b1): Dropout2d(p=0.5, inplace=False)
+    (conv_branch2b1): Conv2d(1024, 2048, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4), bias=False)
+    (bn_branch2b2): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b2): Dropout2d(p=0.5, inplace=False)
+    (conv_branch2b2): Conv2d(2048, 4096, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (conv_branch1): Conv2d(2048, 4096, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (bn7): BatchNorm2d(4096, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (dropout7): Dropout2d(p=0.5, inplace=False)
+  (fc8): Conv2d(4096, 21, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f8_3): Conv2d(512, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f8_4): Conv2d(1024, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f9): Conv2d(195, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+)
+======================================================
+Session started:  Thu May 19 01:17:14 2022
+Iter:    0/ 7000 loss:0.3552 0.2053 0.0000 0.1499 imps:1.4 Fin:Thu May 19 12:01:36 2022 lr: 0.0100
+Iter:   50/ 7000 loss:0.2827 0.1310 0.0004 0.1513 imps:7.0 Fin:Thu May 19 03:30:27 2022 lr: 0.0099
+Iter:  100/ 7000 loss:0.2353 0.1291 0.0002 0.1059 imps:7.2 Fin:Thu May 19 03:26:11 2022 lr: 0.0099
+Iter:  150/ 7000 loss:0.2217 0.1237 0.0002 0.0978 imps:7.3 Fin:Thu May 19 03:24:48 2022 lr: 0.0098
+Iter:  200/ 7000 loss:0.2376 0.1087 0.0001 0.1288 imps:7.4 Fin:Thu May 19 03:24:08 2022 lr: 0.0097
+Iter:  250/ 7000 loss:0.2467 0.1124 0.0001 0.1342 imps:7.4 Fin:Thu May 19 03:23:49 2022 lr: 0.0097
+Iter:  300/ 7000 loss:0.2276 0.1208 0.0001 0.1067 imps:7.4 Fin:Thu May 19 03:23:32 2022 lr: 0.0096
+Iter:  350/ 7000 loss:0.2377 0.1265 0.0001 0.1111 imps:7.4 Fin:Thu May 19 03:23:22 2022 lr: 0.0095
+Iter:  400/ 7000 loss:0.2642 0.1258 0.0001 0.1382 imps:7.4 Fin:Thu May 19 03:23:13 2022 lr: 0.0095
+Iter:  450/ 7000 loss:0.2284 0.1150 0.0002 0.1132 imps:7.4 Fin:Thu May 19 03:23:06 2022 lr: 0.0094
+Iter:  500/ 7000 loss:0.2361 0.1175 0.0001 0.1185 imps:7.4 Fin:Thu May 19 03:22:59 2022 lr: 0.0094
+Iter:  550/ 7000 loss:0.2387 0.1103 0.0001 0.1282 imps:7.4 Fin:Thu May 19 03:22:55 2022 lr: 0.0093
+Iter:  600/ 7000 loss:0.2413 0.1246 0.0001 0.1166 imps:7.4 Fin:Thu May 19 03:22:52 2022 lr: 0.0092
+Iter:  650/ 7000 loss:0.2672 0.1127 0.0000 0.1545 imps:7.4 Fin:Thu May 19 03:22:49 2022 lr: 0.0092
+Iter:  700/ 7000 loss:0.2416 0.1200 0.0001 0.1216 imps:7.4 Fin:Thu May 19 03:22:46 2022 lr: 0.0091
+Iter:  750/ 7000 loss:0.2562 0.1164 0.0001 0.1397 imps:7.4 Fin:Thu May 19 03:22:43 2022 lr: 0.0090
+Iter:  800/ 7000 loss:0.2643 0.1192 0.0001 0.1450 imps:7.4 Fin:Thu May 19 03:22:41 2022 lr: 0.0090
+Iter:  850/ 7000 loss:0.2557 0.1335 0.0001 0.1222 imps:7.4 Fin:Thu May 19 03:22:40 2022 lr: 0.0089
+Iter:  900/ 7000 loss:0.2518 0.1143 0.0001 0.1375 imps:7.4 Fin:Thu May 19 03:22:38 2022 lr: 0.0088
+Iter:  950/ 7000 loss:0.2631 0.1153 0.0001 0.1477 imps:7.4 Fin:Thu May 19 03:22:36 2022 lr: 0.0088
+Iter: 1000/ 7000 loss:0.2524 0.1172 0.0001 0.1351 imps:7.4 Fin:Thu May 19 03:22:33 2022 lr: 0.0087
+Iter: 1050/ 7000 loss:0.2489 0.1154 0.0001 0.1333 imps:7.4 Fin:Thu May 19 03:22:33 2022 lr: 0.0086
+Iter: 1100/ 7000 loss:0.2412 0.1179 0.0001 0.1232 imps:7.4 Fin:Thu May 19 03:22:32 2022 lr: 0.0086
+Iter: 1150/ 7000 loss:0.2553 0.1125 0.0001 0.1427 imps:7.4 Fin:Thu May 19 03:22:32 2022 lr: 0.0085
+Iter: 1200/ 7000 loss:0.2721 0.1034 0.0000 0.1687 imps:7.4 Fin:Thu May 19 03:22:32 2022 lr: 0.0084
+Iter: 1250/ 7000 loss:0.2533 0.1104 0.0001 0.1428 imps:7.5 Fin:Thu May 19 03:22:31 2022 lr: 0.0084
+Iter: 1300/ 7000 loss:0.2558 0.1207 0.0001 0.1350 imps:7.5 Fin:Thu May 19 03:22:30 2022 lr: 0.0083
+Iter: 1350/ 7000 loss:0.2533 0.1022 0.0001 0.1511 imps:7.5 Fin:Thu May 19 03:22:29 2022 lr: 0.0082
+Iter: 1400/ 7000 loss:0.2657 0.1040 0.0001 0.1616 imps:7.5 Fin:Thu May 19 03:22:29 2022 lr: 0.0082
+Iter: 1450/ 7000 loss:0.3009 0.1094 0.0000 0.1915 imps:7.5 Fin:Thu May 19 03:22:29 2022 lr: 0.0081
+Iter: 1500/ 7000 loss:0.2811 0.1190 0.0001 0.1621 imps:7.5 Fin:Thu May 19 03:22:28 2022 lr: 0.0080
+Iter: 1550/ 7000 loss:0.2968 0.1127 0.0001 0.1840 imps:7.5 Fin:Thu May 19 03:22:27 2022 lr: 0.0080
+Iter: 1600/ 7000 loss:0.2447 0.1071 0.0001 0.1376 imps:7.5 Fin:Thu May 19 03:22:26 2022 lr: 0.0079
+Iter: 1650/ 7000 loss:0.2662 0.1131 0.0001 0.1531 imps:7.5 Fin:Thu May 19 03:22:26 2022 lr: 0.0079
+Iter: 1700/ 7000 loss:0.2739 0.1060 0.0001 0.1679 imps:7.5 Fin:Thu May 19 03:22:25 2022 lr: 0.0078
+Iter: 1750/ 7000 loss:0.2724 0.1199 0.0001 0.1524 imps:7.5 Fin:Thu May 19 03:22:25 2022 lr: 0.0077
+Iter: 1800/ 7000 loss:0.2743 0.1163 0.0001 0.1578 imps:7.5 Fin:Thu May 19 03:22:25 2022 lr: 0.0077
+Iter: 1850/ 7000 loss:0.3071 0.1065 0.0001 0.2005 imps:7.5 Fin:Thu May 19 03:22:25 2022 lr: 0.0076
+Iter: 1900/ 7000 loss:0.2923 0.1160 0.0001 0.1763 imps:7.5 Fin:Thu May 19 03:22:24 2022 lr: 0.0075
+Iter: 1950/ 7000 loss:0.3243 0.1049 0.0000 0.2194 imps:7.5 Fin:Thu May 19 03:22:24 2022 lr: 0.0075
+Iter: 2000/ 7000 loss:0.2906 0.1217 0.0001 0.1688 imps:7.5 Fin:Thu May 19 03:22:24 2022 lr: 0.0074
+Iter: 2050/ 7000 loss:0.3094 0.1130 0.0000 0.1964 imps:7.5 Fin:Thu May 19 03:22:24 2022 lr: 0.0073
+Iter: 2100/ 7000 loss:0.3369 0.1134 0.0000 0.2235 imps:7.5 Fin:Thu May 19 03:22:24 2022 lr: 0.0073
+Iter: 2150/ 7000 loss:0.3735 0.1080 0.0000 0.2655 imps:7.5 Fin:Thu May 19 03:22:23 2022 lr: 0.0072
+Iter: 2200/ 7000 loss:0.3526 0.1109 0.0001 0.2416 imps:7.5 Fin:Thu May 19 03:22:23 2022 lr: 0.0071
+Iter: 2250/ 7000 loss:0.3138 0.1218 0.0001 0.1919 imps:7.5 Fin:Thu May 19 03:22:22 2022 lr: 0.0071
+Iter: 2300/ 7000 loss:0.2699 0.1113 0.0001 0.1586 imps:7.5 Fin:Thu May 19 03:22:22 2022 lr: 0.0070
+Iter: 2350/ 7000 loss:0.2739 0.1029 0.0001 0.1709 imps:7.5 Fin:Thu May 19 03:22:21 2022 lr: 0.0069
+Iter: 2400/ 7000 loss:0.2811 0.1133 0.0001 0.1678 imps:7.5 Fin:Thu May 19 03:22:21 2022 lr: 0.0069
+Iter: 2450/ 7000 loss:0.2764 0.1148 0.0001 0.1615 imps:7.5 Fin:Thu May 19 03:22:21 2022 lr: 0.0068
+Iter: 2500/ 7000 loss:0.3084 0.1063 0.0001 0.2021 imps:7.5 Fin:Thu May 19 03:22:21 2022 lr: 0.0067
+Iter: 2550/ 7000 loss:0.3435 0.1079 0.0000 0.2355 imps:7.5 Fin:Thu May 19 03:22:21 2022 lr: 0.0067
+Iter: 2600/ 7000 loss:0.3090 0.0984 0.0000 0.2106 imps:7.5 Fin:Thu May 19 03:22:20 2022 lr: 0.0066
+Iter: 2650/ 7000 loss:0.3335 0.1051 0.0000 0.2283 imps:7.5 Fin:Thu May 19 03:22:20 2022 lr: 0.0065
+Iter: 2700/ 7000 loss:0.2998 0.1125 0.0001 0.1872 imps:7.5 Fin:Thu May 19 03:22:19 2022 lr: 0.0064
+Iter: 2750/ 7000 loss:0.3294 0.1132 0.0001 0.2162 imps:7.5 Fin:Thu May 19 03:22:19 2022 lr: 0.0064
+Iter: 2800/ 7000 loss:0.2924 0.1194 0.0002 0.1729 imps:7.5 Fin:Thu May 19 03:22:19 2022 lr: 0.0063
+Iter: 2850/ 7000 loss:0.3087 0.1137 0.0001 0.1948 imps:7.5 Fin:Thu May 19 03:22:19 2022 lr: 0.0062
+Iter: 2900/ 7000 loss:0.3529 0.1075 0.0000 0.2453 imps:7.5 Fin:Thu May 19 03:22:18 2022 lr: 0.0062
+Iter: 2950/ 7000 loss:0.3219 0.1129 0.0000 0.2090 imps:7.5 Fin:Thu May 19 03:22:18 2022 lr: 0.0061
+Iter: 3000/ 7000 loss:0.3017 0.1061 0.0001 0.1954 imps:7.5 Fin:Thu May 19 03:22:18 2022 lr: 0.0060
+Iter: 3050/ 7000 loss:0.3164 0.1328 0.0001 0.1834 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0060
+Iter: 3100/ 7000 loss:0.3289 0.0999 0.0000 0.2290 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0059
+Iter: 3150/ 7000 loss:0.2888 0.1079 0.0001 0.1808 imps:7.5 Fin:Thu May 19 03:22:18 2022 lr: 0.0058
+Iter: 3200/ 7000 loss:0.2738 0.1022 0.0001 0.1715 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0058
+Iter: 3250/ 7000 loss:0.2850 0.1021 0.0001 0.1829 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0057
+Iter: 3300/ 7000 loss:0.2765 0.0985 0.0001 0.1780 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0056
+Iter: 3350/ 7000 loss:0.3341 0.1190 0.0001 0.2151 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0056
+Iter: 3400/ 7000 loss:0.3260 0.1029 0.0001 0.2231 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0055
+Iter: 3450/ 7000 loss:0.3108 0.1053 0.0001 0.2054 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0054
+Iter: 3500/ 7000 loss:0.3162 0.1071 0.0000 0.2090 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0054
+Iter: 3550/ 7000 loss:0.3396 0.1007 0.0000 0.2389 imps:7.5 Fin:Thu May 19 03:22:17 2022 lr: 0.0053
+Iter: 3600/ 7000 loss:0.3235 0.1096 0.0001 0.2138 imps:7.5 Fin:Thu May 19 03:22:16 2022 lr: 0.0052
+Iter: 3650/ 7000 loss:0.3174 0.1101 0.0001 0.2072 imps:7.5 Fin:Thu May 19 03:22:16 2022 lr: 0.0052
+Iter: 3700/ 7000 loss:0.2896 0.0968 0.0001 0.1927 imps:7.5 Fin:Thu May 19 03:22:16 2022 lr: 0.0051
+Iter: 3750/ 7000 loss:0.3213 0.1084 0.0001 0.2129 imps:7.5 Fin:Thu May 19 03:22:16 2022 lr: 0.0050
+Iter: 3800/ 7000 loss:0.3423 0.1083 0.0001 0.2339 imps:7.5 Fin:Thu May 19 03:22:15 2022 lr: 0.0049
+Iter: 3850/ 7000 loss:0.3486 0.1126 0.0001 0.2360 imps:7.5 Fin:Thu May 19 03:22:15 2022 lr: 0.0049
+Iter: 3900/ 7000 loss:0.3455 0.1112 0.0000 0.2342 imps:7.5 Fin:Thu May 19 03:22:15 2022 lr: 0.0048
+Iter: 3950/ 7000 loss:0.3705 0.1074 0.0000 0.2631 imps:7.5 Fin:Thu May 19 03:22:15 2022 lr: 0.0047
+Iter: 4000/ 7000 loss:0.3631 0.1104 0.0001 0.2526 imps:7.5 Fin:Thu May 19 03:22:15 2022 lr: 0.0047
+Iter: 4050/ 7000 loss:0.2955 0.1127 0.0002 0.1826 imps:7.5 Fin:Thu May 19 03:22:15 2022 lr: 0.0046
+Iter: 4100/ 7000 loss:0.2973 0.1141 0.0001 0.1831 imps:7.5 Fin:Thu May 19 03:22:15 2022 lr: 0.0045
+Iter: 4150/ 7000 loss:0.3085 0.1146 0.0001 0.1938 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0045
+Iter: 4200/ 7000 loss:0.3468 0.1153 0.0000 0.2314 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0044
+Iter: 4250/ 7000 loss:0.3151 0.1072 0.0001 0.2078 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0043
+Iter: 4300/ 7000 loss:0.3171 0.1034 0.0001 0.2137 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0042
+Iter: 4350/ 7000 loss:0.3278 0.1051 0.0001 0.2226 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0042
+Iter: 4400/ 7000 loss:0.2949 0.1034 0.0001 0.1914 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0041
+Iter: 4450/ 7000 loss:0.2903 0.1116 0.0001 0.1786 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0040
+Iter: 4500/ 7000 loss:0.3032 0.1145 0.0002 0.1886 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0040
+Iter: 4550/ 7000 loss:0.3017 0.1057 0.0001 0.1959 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0039
+Iter: 4600/ 7000 loss:0.3066 0.1047 0.0001 0.2018 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0038
+Iter: 4650/ 7000 loss:0.3146 0.1090 0.0001 0.2055 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0037
+Iter: 4700/ 7000 loss:0.2777 0.1134 0.0002 0.1641 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0037
+Iter: 4750/ 7000 loss:0.2948 0.1098 0.0001 0.1849 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0036
+Iter: 4800/ 7000 loss:0.2978 0.1097 0.0001 0.1880 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0035
+Iter: 4850/ 7000 loss:0.3287 0.1129 0.0001 0.2157 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0035
+Iter: 4900/ 7000 loss:0.3602 0.1129 0.0000 0.2472 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0034
+Iter: 4950/ 7000 loss:0.3307 0.1117 0.0001 0.2189 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0033
+Iter: 5000/ 7000 loss:0.3555 0.1007 0.0000 0.2547 imps:7.5 Fin:Thu May 19 03:22:14 2022 lr: 0.0032
+Iter: 5050/ 7000 loss:0.3709 0.1002 0.0000 0.2706 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0032
+Iter: 5100/ 7000 loss:0.3470 0.1100 0.0001 0.2369 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0031
+Iter: 5150/ 7000 loss:0.3125 0.1098 0.0001 0.2027 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0030
+Iter: 5200/ 7000 loss:0.3433 0.1184 0.0001 0.2248 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0029
+Iter: 5250/ 7000 loss:0.3282 0.1093 0.0001 0.2188 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0029
+Iter: 5300/ 7000 loss:0.3320 0.1180 0.0001 0.2138 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0028
+Iter: 5350/ 7000 loss:0.3268 0.1086 0.0001 0.2182 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0027
+Iter: 5400/ 7000 loss:0.2923 0.1085 0.0001 0.1838 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0026
+Iter: 5450/ 7000 loss:0.3264 0.1068 0.0001 0.2196 imps:7.5 Fin:Thu May 19 03:22:13 2022 lr: 0.0026
+Iter: 5500/ 7000 loss:0.2913 0.1170 0.0001 0.1742 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0025
+Iter: 5550/ 7000 loss:0.3072 0.1051 0.0001 0.2021 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0024
+Iter: 5600/ 7000 loss:0.3451 0.0965 0.0000 0.2485 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0023
+Iter: 5650/ 7000 loss:0.3128 0.1166 0.0001 0.1960 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0023
+Iter: 5700/ 7000 loss:0.3365 0.1027 0.0001 0.2337 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0022
+Iter: 5750/ 7000 loss:0.3520 0.1080 0.0000 0.2440 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0021
+Iter: 5800/ 7000 loss:0.3291 0.1150 0.0001 0.2140 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0020
+Iter: 5850/ 7000 loss:0.3206 0.0928 0.0000 0.2278 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0020
+Iter: 5900/ 7000 loss:0.3255 0.1170 0.0001 0.2085 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0019
+Iter: 5950/ 7000 loss:0.3210 0.1134 0.0001 0.2074 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0018
+Iter: 6000/ 7000 loss:0.3517 0.1190 0.0001 0.2326 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0017
+Iter: 6050/ 7000 loss:0.3738 0.1080 0.0000 0.2657 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0017
+Iter: 6100/ 7000 loss:0.3458 0.1008 0.0000 0.2450 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0016
+Iter: 6150/ 7000 loss:0.3725 0.1057 0.0000 0.2667 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0015
+Iter: 6200/ 7000 loss:0.3629 0.1106 0.0000 0.2523 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0014
+Iter: 6250/ 7000 loss:0.3409 0.1004 0.0001 0.2405 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0013
+Iter: 6300/ 7000 loss:0.3057 0.1083 0.0001 0.1973 imps:7.5 Fin:Thu May 19 03:22:12 2022 lr: 0.0013
+Iter: 6350/ 7000 loss:0.3526 0.0953 0.0000 0.2573 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0012
+Iter: 6400/ 7000 loss:0.3340 0.0959 0.0001 0.2381 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0011
+Iter: 6450/ 7000 loss:0.3525 0.1046 0.0001 0.2479 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0010
+Iter: 6500/ 7000 loss:0.3524 0.1094 0.0001 0.2429 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0009
+Iter: 6550/ 7000 loss:0.3617 0.1013 0.0000 0.2603 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0008
+Iter: 6600/ 7000 loss:0.3234 0.1146 0.0002 0.2086 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0008
+Iter: 6650/ 7000 loss:0.3053 0.1100 0.0001 0.1952 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0007
+Iter: 6700/ 7000 loss:0.3190 0.1102 0.0001 0.2087 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0006
+Iter: 6750/ 7000 loss:0.3291 0.1046 0.0001 0.2244 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0005
+Iter: 6800/ 7000 loss:0.3447 0.1037 0.0001 0.2409 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0004
+Iter: 6850/ 7000 loss:0.3424 0.1126 0.0001 0.2298 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0003
+Iter: 6900/ 7000 loss:0.3287 0.1054 0.0001 0.2232 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0002
+Iter: 6950/ 7000 loss:0.3391 0.1133 0.0001 0.2257 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0001
+Iter: 7000/ 7000 loss:0.3255 0.1053 0.0001 0.2201 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7050/ 7000 loss:0.3266 0.1033 0.0001 0.2232 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7100/ 7000 loss:0.3296 0.1042 0.0001 0.2253 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7150/ 7000 loss:0.3353 0.1070 0.0001 0.2282 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7200/ 7000 loss:0.3443 0.1150 0.0001 0.2292 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7250/ 7000 loss:0.3440 0.1081 0.0001 0.2358 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7300/ 7000 loss:0.3327 0.1117 0.0001 0.2209 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7350/ 7000 loss:0.3393 0.1060 0.0001 0.2332 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7400/ 7000 loss:0.3282 0.1033 0.0001 0.2248 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7450/ 7000 loss:0.3402 0.1119 0.0001 0.2282 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7500/ 7000 loss:0.3433 0.1114 0.0001 0.2318 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7550/ 7000 loss:0.3337 0.1084 0.0001 0.2252 imps:7.5 Fin:Thu May 19 03:22:11 2022 lr: 0.0000
+Iter: 7600/ 7000 loss:0.3173 0.1034 0.0001 0.2138 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 7650/ 7000 loss:0.3256 0.1012 0.0001 0.2244 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 7700/ 7000 loss:0.3275 0.1099 0.0001 0.2175 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 7750/ 7000 loss:0.3309 0.1026 0.0001 0.2282 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 7800/ 7000 loss:0.3383 0.1076 0.0001 0.2306 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 7850/ 7000 loss:0.3298 0.1031 0.0001 0.2266 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 7900/ 7000 loss:0.3315 0.1108 0.0001 0.2206 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 7950/ 7000 loss:0.3362 0.1073 0.0001 0.2288 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8000/ 7000 loss:0.3302 0.1068 0.0001 0.2233 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8050/ 7000 loss:0.3285 0.0947 0.0000 0.2338 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8100/ 7000 loss:0.3294 0.1132 0.0001 0.2162 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8150/ 7000 loss:0.3596 0.1298 0.0001 0.2297 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8200/ 7000 loss:0.3380 0.1214 0.0001 0.2165 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8250/ 7000 loss:0.3323 0.1051 0.0001 0.2271 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8300/ 7000 loss:0.3269 0.1054 0.0001 0.2214 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8350/ 7000 loss:0.3413 0.1211 0.0001 0.2201 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8400/ 7000 loss:0.3345 0.1115 0.0000 0.2230 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8450/ 7000 loss:0.3314 0.1066 0.0001 0.2247 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8500/ 7000 loss:0.3318 0.1051 0.0001 0.2267 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8550/ 7000 loss:0.3412 0.1143 0.0001 0.2268 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8600/ 7000 loss:0.3174 0.0995 0.0001 0.2178 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8650/ 7000 loss:0.3317 0.1242 0.0001 0.2074 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8700/ 7000 loss:0.3361 0.1053 0.0001 0.2307 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8750/ 7000 loss:0.3317 0.1045 0.0001 0.2272 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8800/ 7000 loss:0.3293 0.0980 0.0001 0.2313 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8850/ 7000 loss:0.3377 0.1176 0.0001 0.2200 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8900/ 7000 loss:0.3361 0.1104 0.0001 0.2257 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 8950/ 7000 loss:0.3431 0.1088 0.0001 0.2342 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9000/ 7000 loss:0.3293 0.1059 0.0001 0.2234 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9050/ 7000 loss:0.3387 0.1128 0.0001 0.2259 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9100/ 7000 loss:0.3296 0.1104 0.0001 0.2191 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9150/ 7000 loss:0.3260 0.1111 0.0001 0.2147 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9200/ 7000 loss:0.3329 0.1112 0.0001 0.2216 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9250/ 7000 loss:0.3235 0.1032 0.0000 0.2202 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9300/ 7000 loss:0.3423 0.1103 0.0001 0.2319 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9350/ 7000 loss:0.3339 0.1075 0.0001 0.2264 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9400/ 7000 loss:0.3216 0.1049 0.0001 0.2166 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+
+Iter: 9450/ 7000 loss:0.3382 0.1141 0.0001 0.2240 imps:7.4 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9500/ 7000 loss:0.3291 0.1106 0.0001 0.2184 imps:7.4 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9550/ 7000 loss:0.3289 0.1078 0.0001 0.2210 imps:7.4 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9600/ 7000 loss:0.3283 0.1019 0.0001 0.2262 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9650/ 7000 loss:0.3350 0.1017 0.0001 0.2332 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9700/ 7000 loss:0.3262 0.1047 0.0001 0.2214 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9750/ 7000 loss:0.3457 0.1121 0.0001 0.2334 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9800/ 7000 loss:0.3464 0.1121 0.0001 0.2342 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9850/ 7000 loss:0.3354 0.1159 0.0001 0.2194 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9900/ 7000 loss:0.3334 0.1156 0.0001 0.2177 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter: 9950/ 7000 loss:0.3305 0.1037 0.0001 0.2267 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10000/ 7000 loss:0.3357 0.1077 0.0001 0.2279 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10050/ 7000 loss:0.3430 0.1153 0.0001 0.2276 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10100/ 7000 loss:0.3248 0.1018 0.0001 0.2230 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10150/ 7000 loss:0.3349 0.1057 0.0001 0.2292 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10200/ 7000 loss:0.3398 0.1113 0.0001 0.2284 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10250/ 7000 loss:0.3415 0.1258 0.0001 0.2156 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10300/ 7000 loss:0.3325 0.1103 0.0001 0.2221 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10350/ 7000 loss:0.3334 0.1070 0.0001 0.2263 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10400/ 7000 loss:0.3311 0.1061 0.0001 0.2248 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10450/ 7000 loss:0.3175 0.1027 0.0001 0.2147 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10500/ 7000 loss:0.3356 0.1118 0.0001 0.2237 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10550/ 7000 loss:0.3313 0.1060 0.0001 0.2253 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10600/ 7000 loss:0.3393 0.1144 0.0000 0.2249 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:10650/ 7000 loss:0.3350 0.1051 0.0001 0.2299 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10700/ 7000 loss:0.3293 0.1105 0.0001 0.2188 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10750/ 7000 loss:0.3280 0.1019 0.0001 0.2261 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:10800/ 7000 loss:0.3340 0.1154 0.0001 0.2185 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10850/ 7000 loss:0.3414 0.1106 0.0001 0.2307 imps:7.5 Fin:Thu May 19 03:22:10 2022 lr: 0.0000
+Iter:10900/ 7000 loss:0.3227 0.1013 0.0001 0.2213 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:10950/ 7000 loss:0.3259 0.1033 0.0001 0.2225 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11000/ 7000 loss:0.3365 0.1049 0.0001 0.2315 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11050/ 7000 loss:0.3270 0.1030 0.0001 0.2240 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11100/ 7000 loss:0.3196 0.0990 0.0001 0.2205 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11150/ 7000 loss:0.3407 0.1128 0.0001 0.2278 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11200/ 7000 loss:0.3287 0.1044 0.0001 0.2242 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11250/ 7000 loss:0.3428 0.1179 0.0001 0.2248 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11300/ 7000 loss:0.3333 0.1120 0.0001 0.2212 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11350/ 7000 loss:0.3253 0.1056 0.0000 0.2197 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11400/ 7000 loss:0.3385 0.1160 0.0001 0.2224 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11450/ 7000 loss:0.3350 0.0987 0.0000 0.2362 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11500/ 7000 loss:0.3267 0.1080 0.0001 0.2186 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11550/ 7000 loss:0.3166 0.0954 0.0001 0.2211 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11600/ 7000 loss:0.3351 0.1123 0.0001 0.2227 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11650/ 7000 loss:0.3334 0.1068 0.0001 0.2265 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11700/ 7000 loss:0.3215 0.1047 0.0000 0.2167 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11750/ 7000 loss:0.3441 0.1164 0.0001 0.2276 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11800/ 7000 loss:0.3338 0.1021 0.0000 0.2317 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11850/ 7000 loss:0.3448 0.1173 0.0001 0.2273 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11900/ 7000 loss:0.3198 0.1061 0.0001 0.2136 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:11950/ 7000 loss:0.3267 0.1116 0.0001 0.2150 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12000/ 7000 loss:0.3217 0.1113 0.0001 0.2104 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12050/ 7000 loss:0.3184 0.1022 0.0001 0.2161 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12100/ 7000 loss:0.3259 0.1014 0.0001 0.2244 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12150/ 7000 loss:0.3448 0.1213 0.0000 0.2234 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12200/ 7000 loss:0.3323 0.1122 0.0001 0.2201 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12250/ 7000 loss:0.3268 0.1095 0.0001 0.2172 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12300/ 7000 loss:0.3316 0.1168 0.0001 0.2148 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12350/ 7000 loss:0.3452 0.1124 0.0001 0.2327 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12400/ 7000 loss:0.3347 0.0993 0.0001 0.2354 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12450/ 7000 loss:0.3451 0.1181 0.0001 0.2269 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12500/ 7000 loss:0.3260 0.1056 0.0001 0.2203 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12550/ 7000 loss:0.3370 0.1078 0.0001 0.2291 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12600/ 7000 loss:0.3279 0.1036 0.0001 0.2242 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12650/ 7000 loss:0.3345 0.1177 0.0001 0.2167 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12700/ 7000 loss:0.3345 0.0997 0.0001 0.2347 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12750/ 7000 loss:0.3303 0.1070 0.0001 0.2233 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12800/ 7000 loss:0.3429 0.1106 0.0001 0.2322 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:12850/ 7000 loss:0.3309 0.1036 0.0001 0.2272 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:12900/ 7000 loss:0.3358 0.1157 0.0001 0.2201 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:12950/ 7000 loss:0.3280 0.1089 0.0001 0.2190 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13000/ 7000 loss:0.3308 0.0932 0.0001 0.2376 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13050/ 7000 loss:0.3275 0.1009 0.0000 0.2266 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13100/ 7000 loss:0.3211 0.0988 0.0001 0.2222 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13150/ 7000 loss:0.3233 0.0993 0.0001 0.2239 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13200/ 7000 loss:0.3267 0.1080 0.0001 0.2186 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13250/ 7000 loss:0.3320 0.1062 0.0001 0.2257 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13300/ 7000 loss:0.3316 0.1087 0.0000 0.2228 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13350/ 7000 loss:0.3311 0.1046 0.0001 0.2264 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13400/ 7000 loss:0.3481 0.1141 0.0001 0.2339 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:13450/ 7000 loss:0.3389 0.1029 0.0001 0.2360 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:13500/ 7000 loss:0.3215 0.0986 0.0001 0.2228 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:13550/ 7000 loss:0.3385 0.1081 0.0001 0.2303 imps:7.5 Fin:Thu May 19 03:22:09 2022 lr: 0.0000
+Iter:13600/ 7000 loss:0.3189 0.1037 0.0001 0.2152 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13650/ 7000 loss:0.3284 0.1064 0.0000 0.2220 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13700/ 7000 loss:0.3295 0.1037 0.0001 0.2257 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13750/ 7000 loss:0.3181 0.0922 0.0001 0.2259 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13800/ 7000 loss:0.3333 0.1100 0.0001 0.2233 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13850/ 7000 loss:0.3327 0.1148 0.0001 0.2178 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13900/ 7000 loss:0.3433 0.1129 0.0001 0.2303 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:13950/ 7000 loss:0.3345 0.1166 0.0001 0.2178 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14000/ 7000 loss:0.3228 0.1027 0.0001 0.2199 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14050/ 7000 loss:0.3269 0.1121 0.0001 0.2146 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14100/ 7000 loss:0.3321 0.1150 0.0001 0.2170 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14150/ 7000 loss:0.3337 0.1055 0.0001 0.2281 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14200/ 7000 loss:0.3444 0.1164 0.0001 0.2279 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14250/ 7000 loss:0.3427 0.1152 0.0000 0.2274 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14300/ 7000 loss:0.3363 0.1090 0.0001 0.2273 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14350/ 7000 loss:0.3348 0.1066 0.0001 0.2281 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14400/ 7000 loss:0.3293 0.1079 0.0000 0.2214 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14450/ 7000 loss:0.3237 0.0995 0.0001 0.2241 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14500/ 7000 loss:0.3253 0.1022 0.0001 0.2230 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14550/ 7000 loss:0.3265 0.1057 0.0001 0.2207 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14600/ 7000 loss:0.3384 0.1137 0.0001 0.2246 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14650/ 7000 loss:0.3284 0.1058 0.0001 0.2225 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14700/ 7000 loss:0.3366 0.1099 0.0001 0.2265 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14750/ 7000 loss:0.3255 0.1145 0.0001 0.2109 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14800/ 7000 loss:0.3239 0.1091 0.0001 0.2148 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14850/ 7000 loss:0.3318 0.0985 0.0001 0.2332 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14900/ 7000 loss:0.3367 0.0960 0.0001 0.2406 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:14950/ 7000 loss:0.3379 0.1087 0.0001 0.2291 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15000/ 7000 loss:0.3379 0.1048 0.0001 0.2330 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15050/ 7000 loss:0.3463 0.1163 0.0001 0.2299 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15100/ 7000 loss:0.3267 0.1082 0.0001 0.2185 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15150/ 7000 loss:0.3472 0.1054 0.0000 0.2417 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15200/ 7000 loss:0.3251 0.1051 0.0001 0.2199 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15250/ 7000 loss:0.3287 0.1065 0.0001 0.2220 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15300/ 7000 loss:0.3406 0.1120 0.0001 0.2285 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15350/ 7000 loss:0.3307 0.1138 0.0001 0.2168 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15400/ 7000 loss:0.3275 0.1008 0.0001 0.2266 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15450/ 7000 loss:0.3355 0.1013 0.0001 0.2341 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15500/ 7000 loss:0.3250 0.1044 0.0001 0.2205 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15550/ 7000 loss:0.3369 0.1141 0.0001 0.2227 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15600/ 7000 loss:0.3296 0.0996 0.0001 0.2299 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15650/ 7000 loss:0.3332 0.1089 0.0001 0.2241 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15700/ 7000 loss:0.3331 0.1080 0.0001 0.2249 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15750/ 7000 loss:0.3230 0.0959 0.0001 0.2270 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15800/ 7000 loss:0.3252 0.0979 0.0001 0.2272 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15850/ 7000 loss:0.3353 0.1032 0.0001 0.2320 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15900/ 7000 loss:0.3187 0.0970 0.0001 0.2216 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:15950/ 7000 loss:0.3413 0.1125 0.0001 0.2288 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16000/ 7000 loss:0.3264 0.1018 0.0000 0.2246 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16050/ 7000 loss:0.3333 0.1129 0.0001 0.2204 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16100/ 7000 loss:0.3455 0.1163 0.0000 0.2291 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16150/ 7000 loss:0.3335 0.1065 0.0001 0.2270 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16200/ 7000 loss:0.3202 0.0922 0.0001 0.2279 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16250/ 7000 loss:0.3280 0.0972 0.0001 0.2307 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16300/ 7000 loss:0.3320 0.1058 0.0001 0.2262 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16350/ 7000 loss:0.3356 0.1072 0.0001 0.2283 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16400/ 7000 loss:0.3283 0.1026 0.0000 0.2256 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16450/ 7000 loss:0.3162 0.0984 0.0001 0.2177 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16500/ 7000 loss:0.3323 0.1024 0.0001 0.2298 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16550/ 7000 loss:0.3246 0.1098 0.0001 0.2148 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16600/ 7000 loss:0.3446 0.1159 0.0001 0.2286 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16650/ 7000 loss:0.3485 0.1184 0.0001 0.2300 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16700/ 7000 loss:0.3397 0.1024 0.0001 0.2372 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16750/ 7000 loss:0.3316 0.1152 0.0001 0.2163 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16800/ 7000 loss:0.3329 0.1075 0.0001 0.2252 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16850/ 7000 loss:0.3364 0.1029 0.0001 0.2334 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16900/ 7000 loss:0.3375 0.1191 0.0001 0.2183 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:16950/ 7000 loss:0.3351 0.1103 0.0001 0.2247 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17000/ 7000 loss:0.3357 0.1134 0.0001 0.2222 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17050/ 7000 loss:0.3383 0.1055 0.0001 0.2327 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17100/ 7000 loss:0.3386 0.1136 0.0001 0.2249 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17150/ 7000 loss:0.3405 0.0976 0.0001 0.2428 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17200/ 7000 loss:0.3414 0.1100 0.0001 0.2313 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17250/ 7000 loss:0.3329 0.1107 0.0001 0.2221 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17300/ 7000 loss:0.3402 0.1068 0.0001 0.2334 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17350/ 7000 loss:0.3155 0.0958 0.0001 0.2196 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17400/ 7000 loss:0.3266 0.1174 0.0001 0.2092 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17450/ 7000 loss:0.3277 0.1095 0.0001 0.2181 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17500/ 7000 loss:0.3434 0.1133 0.0001 0.2300 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17550/ 7000 loss:0.3315 0.1078 0.0001 0.2236 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17600/ 7000 loss:0.3326 0.1137 0.0001 0.2188 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17650/ 7000 loss:0.3274 0.1162 0.0001 0.2110 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:17700/ 7000 loss:0.3286 0.1050 0.0001 0.2235 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:17750/ 7000 loss:0.3284 0.1000 0.0001 0.2283 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17800/ 7000 loss:0.3410 0.1145 0.0000 0.2265 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:17850/ 7000 loss:0.3284 0.1045 0.0001 0.2238 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:17900/ 7000 loss:0.3320 0.1124 0.0001 0.2195 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:17950/ 7000 loss:0.3389 0.1048 0.0001 0.2340 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18000/ 7000 loss:0.3367 0.1109 0.0001 0.2257 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18050/ 7000 loss:0.3373 0.1188 0.0001 0.2184 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18100/ 7000 loss:0.3403 0.1058 0.0000 0.2345 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18150/ 7000 loss:0.3150 0.0962 0.0001 0.2187 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18200/ 7000 loss:0.3453 0.1133 0.0001 0.2319 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18250/ 7000 loss:0.3292 0.1099 0.0001 0.2192 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18300/ 7000 loss:0.3331 0.1082 0.0001 0.2248 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18350/ 7000 loss:0.3340 0.1038 0.0001 0.2301 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18400/ 7000 loss:0.3388 0.1032 0.0001 0.2356 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18450/ 7000 loss:0.3334 0.1077 0.0001 0.2256 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18500/ 7000 loss:0.3373 0.1051 0.0001 0.2322 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18550/ 7000 loss:0.3299 0.1064 0.0001 0.2235 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18600/ 7000 loss:0.3349 0.1206 0.0001 0.2142 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18650/ 7000 loss:0.3325 0.1087 0.0001 0.2237 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18700/ 7000 loss:0.3273 0.1092 0.0001 0.2181 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18750/ 7000 loss:0.3430 0.1104 0.0001 0.2325 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:18800/ 7000 loss:0.3327 0.1010 0.0001 0.2316 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+
+Iter:18850/ 7000 loss:0.3442 0.1147 0.0001 0.2294 imps:7.3 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:18900/ 7000 loss:0.3384 0.1054 0.0001 0.2330 imps:7.4 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:18950/ 7000 loss:0.3348 0.1093 0.0001 0.2254 imps:7.4 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19000/ 7000 loss:0.3258 0.1104 0.0001 0.2153 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19050/ 7000 loss:0.3205 0.1056 0.0001 0.2149 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19100/ 7000 loss:0.3307 0.1109 0.0001 0.2197 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19150/ 7000 loss:0.3398 0.1070 0.0001 0.2327 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19200/ 7000 loss:0.3370 0.1020 0.0001 0.2348 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19250/ 7000 loss:0.3289 0.1067 0.0001 0.2221 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19300/ 7000 loss:0.3399 0.1125 0.0001 0.2273 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19350/ 7000 loss:0.3423 0.1224 0.0001 0.2198 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19400/ 7000 loss:0.3304 0.1072 0.0001 0.2232 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19450/ 7000 loss:0.3286 0.1030 0.0000 0.2255 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19500/ 7000 loss:0.3174 0.0999 0.0001 0.2174 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19550/ 7000 loss:0.3370 0.1019 0.0000 0.2350 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19600/ 7000 loss:0.3344 0.1109 0.0001 0.2234 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19650/ 7000 loss:0.3353 0.1065 0.0001 0.2287 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19700/ 7000 loss:0.3418 0.1090 0.0001 0.2327 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19750/ 7000 loss:0.3274 0.1076 0.0001 0.2197 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19800/ 7000 loss:0.3252 0.1047 0.0001 0.2204 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19850/ 7000 loss:0.3257 0.0977 0.0001 0.2279 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19900/ 7000 loss:0.3348 0.1147 0.0001 0.2200 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:19950/ 7000 loss:0.3185 0.0978 0.0001 0.2206 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20000/ 7000 loss:0.3263 0.1001 0.0001 0.2261 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20050/ 7000 loss:0.3382 0.1120 0.0001 0.2261 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20100/ 7000 loss:0.3310 0.1122 0.0001 0.2187 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20150/ 7000 loss:0.3383 0.1134 0.0001 0.2248 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20200/ 7000 loss:0.3266 0.1051 0.0001 0.2214 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20250/ 7000 loss:0.3197 0.1044 0.0001 0.2152 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20300/ 7000 loss:0.3297 0.1127 0.0001 0.2169 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20350/ 7000 loss:0.3330 0.1091 0.0001 0.2238 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20400/ 7000 loss:0.3261 0.1081 0.0001 0.2179 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20450/ 7000 loss:0.3370 0.1099 0.0001 0.2270 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20500/ 7000 loss:0.3278 0.1000 0.0001 0.2278 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20550/ 7000 loss:0.3515 0.1152 0.0001 0.2362 imps:7.5 Fin:Thu May 19 03:22:08 2022 lr: 0.0000
+Iter:20600/ 7000 loss:0.3328 0.1113 0.0001 0.2214 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:20650/ 7000 loss:0.3274 0.1079 0.0001 0.2195 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:20700/ 7000 loss:0.3329 0.1128 0.0001 0.2200 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:20750/ 7000 loss:0.3398 0.1119 0.0001 0.2279 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:20800/ 7000 loss:0.3258 0.1010 0.0001 0.2247 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:20850/ 7000 loss:0.3416 0.1163 0.0001 0.2252 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:20900/ 7000 loss:0.3211 0.1029 0.0000 0.2182 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:20950/ 7000 loss:0.3458 0.1114 0.0001 0.2344 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21000/ 7000 loss:0.3237 0.1172 0.0001 0.2065 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21050/ 7000 loss:0.3295 0.1079 0.0001 0.2215 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21100/ 7000 loss:0.3434 0.1144 0.0001 0.2289 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21150/ 7000 loss:0.3306 0.1014 0.0001 0.2292 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21200/ 7000 loss:0.3236 0.1029 0.0001 0.2207 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21250/ 7000 loss:0.3275 0.1020 0.0001 0.2254 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21300/ 7000 loss:0.3308 0.1028 0.0001 0.2279 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21350/ 7000 loss:0.3341 0.1074 0.0001 0.2266 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21400/ 7000 loss:0.3319 0.1077 0.0001 0.2241 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21450/ 7000 loss:0.3290 0.1087 0.0001 0.2202 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21500/ 7000 loss:0.3323 0.1052 0.0001 0.2271 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21550/ 7000 loss:0.3317 0.1137 0.0001 0.2179 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21600/ 7000 loss:0.3369 0.1085 0.0001 0.2284 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21650/ 7000 loss:0.3307 0.1032 0.0000 0.2275 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21700/ 7000 loss:0.3310 0.1126 0.0001 0.2183 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21750/ 7000 loss:0.3427 0.1086 0.0001 0.2340 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21800/ 7000 loss:0.3299 0.1088 0.0001 0.2210 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21850/ 7000 loss:0.3338 0.1142 0.0001 0.2195 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21900/ 7000 loss:0.3280 0.1148 0.0001 0.2131 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:21950/ 7000 loss:0.3344 0.1077 0.0001 0.2267 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22000/ 7000 loss:0.3245 0.0960 0.0001 0.2284 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22050/ 7000 loss:0.3513 0.1288 0.0001 0.2224 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22100/ 7000 loss:0.3398 0.1123 0.0001 0.2274 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22150/ 7000 loss:0.3381 0.1080 0.0001 0.2300 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22200/ 7000 loss:0.3231 0.1024 0.0001 0.2206 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22250/ 7000 loss:0.3320 0.1036 0.0001 0.2283 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22300/ 7000 loss:0.3247 0.1046 0.0001 0.2201 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22350/ 7000 loss:0.3376 0.1133 0.0001 0.2242 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22400/ 7000 loss:0.3278 0.1020 0.0001 0.2256 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22450/ 7000 loss:0.3192 0.0983 0.0001 0.2207 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22500/ 7000 loss:0.3371 0.1103 0.0001 0.2267 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22550/ 7000 loss:0.3341 0.1050 0.0001 0.2290 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22600/ 7000 loss:0.3303 0.1072 0.0001 0.2231 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22650/ 7000 loss:0.3345 0.1124 0.0001 0.2221 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22700/ 7000 loss:0.3325 0.1123 0.0001 0.2201 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22750/ 7000 loss:0.3401 0.1160 0.0001 0.2239 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22800/ 7000 loss:0.3318 0.1112 0.0001 0.2205 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22850/ 7000 loss:0.3492 0.1053 0.0001 0.2438 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22900/ 7000 loss:0.3234 0.1029 0.0001 0.2204 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:22950/ 7000 loss:0.3278 0.0994 0.0001 0.2283 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23000/ 7000 loss:0.3274 0.1077 0.0001 0.2197 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23050/ 7000 loss:0.3266 0.1127 0.0001 0.2138 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23100/ 7000 loss:0.3308 0.0980 0.0001 0.2326 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23150/ 7000 loss:0.3379 0.1151 0.0001 0.2227 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23200/ 7000 loss:0.3242 0.1050 0.0001 0.2192 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23250/ 7000 loss:0.3462 0.1178 0.0001 0.2282 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23300/ 7000 loss:0.3298 0.1056 0.0001 0.2241 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23350/ 7000 loss:0.3239 0.1094 0.0001 0.2144 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23400/ 7000 loss:0.3308 0.1055 0.0001 0.2252 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23450/ 7000 loss:0.3202 0.1051 0.0001 0.2150 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23500/ 7000 loss:0.3222 0.1022 0.0000 0.2199 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23550/ 7000 loss:0.3361 0.1181 0.0001 0.2179 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23600/ 7000 loss:0.3355 0.1129 0.0001 0.2225 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23650/ 7000 loss:0.3361 0.1091 0.0001 0.2269 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23700/ 7000 loss:0.3273 0.1012 0.0001 0.2260 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23750/ 7000 loss:0.3297 0.1132 0.0001 0.2164 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23800/ 7000 loss:0.3131 0.0955 0.0001 0.2175 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23850/ 7000 loss:0.3328 0.1100 0.0001 0.2227 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23900/ 7000 loss:0.3324 0.1055 0.0001 0.2268 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:23950/ 7000 loss:0.3313 0.1081 0.0001 0.2232 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24000/ 7000 loss:0.3188 0.1010 0.0001 0.2177 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24050/ 7000 loss:0.3274 0.1078 0.0000 0.2196 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24100/ 7000 loss:0.3143 0.1007 0.0001 0.2135 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24150/ 7000 loss:0.3361 0.1028 0.0001 0.2332 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24200/ 7000 loss:0.3301 0.1060 0.0000 0.2241 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24250/ 7000 loss:0.3276 0.1113 0.0001 0.2163 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24300/ 7000 loss:0.3370 0.1049 0.0001 0.2320 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24350/ 7000 loss:0.3260 0.1022 0.0001 0.2238 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24400/ 7000 loss:0.3357 0.1050 0.0001 0.2306 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24450/ 7000 loss:0.3370 0.1111 0.0001 0.2258 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24500/ 7000 loss:0.3302 0.1060 0.0001 0.2242 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24550/ 7000 loss:0.3373 0.1096 0.0001 0.2276 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24600/ 7000 loss:0.3324 0.1101 0.0001 0.2223 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24650/ 7000 loss:0.3219 0.1004 0.0000 0.2214 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24700/ 7000 loss:0.3295 0.1092 0.0001 0.2202 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24750/ 7000 loss:0.3279 0.1036 0.0000 0.2243 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24800/ 7000 loss:0.3338 0.1134 0.0001 0.2203 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24850/ 7000 loss:0.3283 0.1116 0.0001 0.2166 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24900/ 7000 loss:0.3392 0.1107 0.0001 0.2285 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:24950/ 7000 loss:0.3297 0.1162 0.0001 0.2134 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25000/ 7000 loss:0.3379 0.1083 0.0000 0.2295 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25050/ 7000 loss:0.3290 0.0972 0.0001 0.2317 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25100/ 7000 loss:0.3311 0.1104 0.0001 0.2206 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25150/ 7000 loss:0.3385 0.1039 0.0001 0.2345 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25200/ 7000 loss:0.3304 0.1086 0.0000 0.2218 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25250/ 7000 loss:0.3319 0.1083 0.0001 0.2235 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25300/ 7000 loss:0.3219 0.1017 0.0001 0.2201 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25350/ 7000 loss:0.3248 0.0952 0.0000 0.2296 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25400/ 7000 loss:0.3192 0.1015 0.0001 0.2177 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25450/ 7000 loss:0.3311 0.1051 0.0001 0.2260 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25500/ 7000 loss:0.3349 0.1016 0.0000 0.2332 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25550/ 7000 loss:0.3385 0.1126 0.0001 0.2258 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25600/ 7000 loss:0.3237 0.1003 0.0001 0.2234 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25650/ 7000 loss:0.3303 0.1048 0.0001 0.2254 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25700/ 7000 loss:0.3364 0.1127 0.0001 0.2237 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25750/ 7000 loss:0.3226 0.0993 0.0000 0.2233 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25800/ 7000 loss:0.3484 0.1232 0.0001 0.2251 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25850/ 7000 loss:0.3439 0.1156 0.0001 0.2282 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25900/ 7000 loss:0.3347 0.1076 0.0001 0.2270 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:25950/ 7000 loss:0.3318 0.1032 0.0001 0.2286 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26000/ 7000 loss:0.3434 0.1086 0.0001 0.2348 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26050/ 7000 loss:0.3381 0.1105 0.0001 0.2274 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26100/ 7000 loss:0.3501 0.1154 0.0001 0.2346 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26150/ 7000 loss:0.3193 0.1017 0.0000 0.2176 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26200/ 7000 loss:0.3321 0.1034 0.0001 0.2287 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26250/ 7000 loss:0.3285 0.1075 0.0001 0.2209 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26300/ 7000 loss:0.3426 0.1107 0.0001 0.2317 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26350/ 7000 loss:0.3245 0.1022 0.0001 0.2222 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26400/ 7000 loss:0.3236 0.1026 0.0001 0.2210 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26450/ 7000 loss:0.3286 0.1072 0.0001 0.2213 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26500/ 7000 loss:0.3289 0.1062 0.0001 0.2226 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26550/ 7000 loss:0.3386 0.1064 0.0001 0.2321 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26600/ 7000 loss:0.3363 0.1083 0.0000 0.2279 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26650/ 7000 loss:0.3273 0.1092 0.0001 0.2180 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26700/ 7000 loss:0.3164 0.0960 0.0001 0.2204 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26750/ 7000 loss:0.3370 0.1076 0.0001 0.2294 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26800/ 7000 loss:0.3426 0.1101 0.0001 0.2325 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26850/ 7000 loss:0.3255 0.1082 0.0001 0.2173 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26900/ 7000 loss:0.3389 0.1134 0.0001 0.2254 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:26950/ 7000 loss:0.3268 0.0992 0.0001 0.2275 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27000/ 7000 loss:0.3338 0.1009 0.0001 0.2328 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27050/ 7000 loss:0.3411 0.1149 0.0001 0.2261 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27100/ 7000 loss:0.3429 0.1247 0.0001 0.2181 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27150/ 7000 loss:0.3645 0.1241 0.0001 0.2403 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27200/ 7000 loss:0.3228 0.0965 0.0001 0.2263 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27250/ 7000 loss:0.3427 0.1149 0.0001 0.2277 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27300/ 7000 loss:0.3456 0.1226 0.0001 0.2229 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27350/ 7000 loss:0.3331 0.1108 0.0001 0.2222 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27400/ 7000 loss:0.3464 0.1073 0.0001 0.2391 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27450/ 7000 loss:0.3290 0.1019 0.0001 0.2270 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27500/ 7000 loss:0.3370 0.1088 0.0000 0.2282 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27550/ 7000 loss:0.3441 0.1198 0.0001 0.2242 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27600/ 7000 loss:0.3450 0.1156 0.0001 0.2294 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27650/ 7000 loss:0.3360 0.0999 0.0001 0.2361 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27700/ 7000 loss:0.3317 0.1031 0.0001 0.2285 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27750/ 7000 loss:0.3331 0.1068 0.0001 0.2263 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27800/ 7000 loss:0.3282 0.1039 0.0001 0.2242 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27850/ 7000 loss:0.3383 0.1108 0.0000 0.2275 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27900/ 7000 loss:0.3319 0.1086 0.0000 0.2233 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:27950/ 7000 loss:0.3279 0.1001 0.0001 0.2277 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28000/ 7000 loss:0.3434 0.1128 0.0001 0.2305 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28050/ 7000 loss:0.3311 0.1148 0.0001 0.2161 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28100/ 7000 loss:0.3288 0.1053 0.0001 0.2234 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28150/ 7000 loss:0.3284 0.0988 0.0001 0.2296 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28200/ 7000 loss:0.3409 0.1127 0.0001 0.2281 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+
+Iter:28250/ 7000 loss:0.3294 0.1019 0.0001 0.2274 imps:6.9 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28300/ 7000 loss:0.3214 0.0971 0.0001 0.2242 imps:7.4 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28350/ 7000 loss:0.3530 0.1171 0.0001 0.2358 imps:7.4 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28400/ 7000 loss:0.3400 0.1156 0.0001 0.2244 imps:7.4 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28450/ 7000 loss:0.3370 0.1037 0.0001 0.2333 imps:7.4 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28500/ 7000 loss:0.3358 0.1124 0.0001 0.2233 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28550/ 7000 loss:0.3508 0.1164 0.0001 0.2344 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28600/ 7000 loss:0.3317 0.1047 0.0001 0.2269 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28650/ 7000 loss:0.3290 0.0974 0.0001 0.2315 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28700/ 7000 loss:0.3311 0.1038 0.0001 0.2272 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28750/ 7000 loss:0.3201 0.0989 0.0001 0.2211 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28800/ 7000 loss:0.3294 0.1068 0.0000 0.2226 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28850/ 7000 loss:0.3340 0.1089 0.0001 0.2251 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28900/ 7000 loss:0.3331 0.1112 0.0001 0.2218 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:28950/ 7000 loss:0.3283 0.1053 0.0000 0.2229 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29000/ 7000 loss:0.3461 0.1211 0.0001 0.2249 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29050/ 7000 loss:0.3416 0.1124 0.0001 0.2291 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29100/ 7000 loss:0.3364 0.1134 0.0001 0.2229 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29150/ 7000 loss:0.3202 0.1041 0.0001 0.2160 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29200/ 7000 loss:0.3338 0.1051 0.0001 0.2286 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29250/ 7000 loss:0.3332 0.1106 0.0001 0.2225 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29300/ 7000 loss:0.3356 0.0974 0.0001 0.2381 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29350/ 7000 loss:0.3170 0.1059 0.0001 0.2110 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29400/ 7000 loss:0.3273 0.1008 0.0001 0.2264 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29450/ 7000 loss:0.3298 0.1080 0.0001 0.2217 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29500/ 7000 loss:0.3236 0.1012 0.0001 0.2223 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29550/ 7000 loss:0.3208 0.1059 0.0000 0.2148 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29600/ 7000 loss:0.3378 0.1152 0.0001 0.2225 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29650/ 7000 loss:0.3202 0.0927 0.0001 0.2274 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29700/ 7000 loss:0.3371 0.1128 0.0001 0.2242 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29750/ 7000 loss:0.3243 0.1003 0.0001 0.2239 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29800/ 7000 loss:0.3435 0.1128 0.0001 0.2306 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29850/ 7000 loss:0.3403 0.1241 0.0001 0.2161 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29900/ 7000 loss:0.3410 0.1106 0.0001 0.2303 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:29950/ 7000 loss:0.3306 0.1109 0.0001 0.2196 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30000/ 7000 loss:0.3373 0.1112 0.0001 0.2260 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30050/ 7000 loss:0.3447 0.1111 0.0001 0.2335 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30100/ 7000 loss:0.3409 0.1211 0.0001 0.2197 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30150/ 7000 loss:0.3368 0.1124 0.0001 0.2244 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30200/ 7000 loss:0.3280 0.1046 0.0001 0.2233 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30250/ 7000 loss:0.3458 0.1112 0.0001 0.2346 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30300/ 7000 loss:0.3294 0.1050 0.0001 0.2243 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30350/ 7000 loss:0.3311 0.1005 0.0001 0.2305 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30400/ 7000 loss:0.3485 0.1119 0.0001 0.2365 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30450/ 7000 loss:0.3332 0.0987 0.0001 0.2344 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30500/ 7000 loss:0.3328 0.1123 0.0001 0.2204 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30550/ 7000 loss:0.3291 0.1046 0.0000 0.2245 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30600/ 7000 loss:0.3363 0.1055 0.0001 0.2308 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30650/ 7000 loss:0.3304 0.1147 0.0001 0.2156 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30700/ 7000 loss:0.3292 0.1046 0.0001 0.2246 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30750/ 7000 loss:0.3336 0.1074 0.0001 0.2261 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30800/ 7000 loss:0.3349 0.1053 0.0001 0.2295 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30850/ 7000 loss:0.3360 0.1022 0.0001 0.2338 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30900/ 7000 loss:0.3276 0.0976 0.0001 0.2300 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:30950/ 7000 loss:0.3330 0.1068 0.0001 0.2261 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31000/ 7000 loss:0.3446 0.1085 0.0001 0.2360 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31050/ 7000 loss:0.3303 0.1066 0.0001 0.2237 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31100/ 7000 loss:0.3359 0.0968 0.0001 0.2390 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31150/ 7000 loss:0.3122 0.1031 0.0001 0.2090 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31200/ 7000 loss:0.3287 0.1076 0.0001 0.2211 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31250/ 7000 loss:0.3315 0.1040 0.0001 0.2274 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31300/ 7000 loss:0.3365 0.0962 0.0000 0.2403 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31350/ 7000 loss:0.3386 0.1095 0.0001 0.2291 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31400/ 7000 loss:0.3288 0.1003 0.0001 0.2284 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31450/ 7000 loss:0.3273 0.0988 0.0001 0.2284 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31500/ 7000 loss:0.3222 0.1076 0.0001 0.2145 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31550/ 7000 loss:0.3349 0.1089 0.0001 0.2260 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31600/ 7000 loss:0.3318 0.1008 0.0001 0.2310 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31650/ 7000 loss:0.3376 0.1175 0.0001 0.2200 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31700/ 7000 loss:0.3217 0.0967 0.0000 0.2249 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31750/ 7000 loss:0.3325 0.1025 0.0001 0.2300 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31800/ 7000 loss:0.3367 0.1109 0.0001 0.2258 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31850/ 7000 loss:0.3214 0.1056 0.0000 0.2157 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31900/ 7000 loss:0.3379 0.1017 0.0001 0.2361 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:31950/ 7000 loss:0.3352 0.1107 0.0001 0.2244 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32000/ 7000 loss:0.3313 0.1033 0.0000 0.2280 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32050/ 7000 loss:0.3294 0.1093 0.0001 0.2200 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32100/ 7000 loss:0.3370 0.1146 0.0001 0.2223 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32150/ 7000 loss:0.3455 0.1181 0.0001 0.2273 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32200/ 7000 loss:0.3187 0.0951 0.0001 0.2235 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32250/ 7000 loss:0.3315 0.1054 0.0000 0.2261 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32300/ 7000 loss:0.3305 0.1068 0.0001 0.2237 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32350/ 7000 loss:0.3211 0.1003 0.0001 0.2207 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32400/ 7000 loss:0.3478 0.1138 0.0001 0.2340 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32450/ 7000 loss:0.3474 0.1170 0.0000 0.2303 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32500/ 7000 loss:0.3261 0.1001 0.0001 0.2259 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32550/ 7000 loss:0.3377 0.1090 0.0001 0.2286 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32600/ 7000 loss:0.3441 0.1178 0.0001 0.2262 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32650/ 7000 loss:0.3314 0.0972 0.0001 0.2342 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32700/ 7000 loss:0.3330 0.1082 0.0001 0.2247 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32750/ 7000 loss:0.3188 0.1003 0.0001 0.2184 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32800/ 7000 loss:0.3324 0.1112 0.0001 0.2211 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32850/ 7000 loss:0.3205 0.1012 0.0001 0.2192 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32900/ 7000 loss:0.3493 0.1152 0.0001 0.2340 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:32950/ 7000 loss:0.3452 0.1134 0.0001 0.2316 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33000/ 7000 loss:0.3333 0.1117 0.0001 0.2215 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33050/ 7000 loss:0.3199 0.1050 0.0001 0.2148 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33100/ 7000 loss:0.3364 0.1065 0.0000 0.2299 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33150/ 7000 loss:0.3295 0.1011 0.0000 0.2283 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33200/ 7000 loss:0.3472 0.1081 0.0001 0.2390 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33250/ 7000 loss:0.3457 0.1085 0.0001 0.2371 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33300/ 7000 loss:0.3327 0.1084 0.0001 0.2243 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33350/ 7000 loss:0.3280 0.1036 0.0001 0.2243 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33400/ 7000 loss:0.3361 0.1100 0.0001 0.2260 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33450/ 7000 loss:0.3312 0.1008 0.0001 0.2304 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33500/ 7000 loss:0.3387 0.1071 0.0001 0.2315 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33550/ 7000 loss:0.3265 0.1042 0.0001 0.2222 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33600/ 7000 loss:0.3539 0.1175 0.0001 0.2363 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33650/ 7000 loss:0.3290 0.1013 0.0000 0.2277 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33700/ 7000 loss:0.3358 0.1090 0.0001 0.2267 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33750/ 7000 loss:0.3408 0.1038 0.0001 0.2369 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33800/ 7000 loss:0.3282 0.0996 0.0001 0.2286 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33850/ 7000 loss:0.3410 0.1154 0.0001 0.2254 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33900/ 7000 loss:0.3410 0.1144 0.0001 0.2264 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:33950/ 7000 loss:0.3411 0.1079 0.0000 0.2332 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34000/ 7000 loss:0.3292 0.1017 0.0001 0.2274 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34050/ 7000 loss:0.3339 0.1056 0.0001 0.2283 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34100/ 7000 loss:0.3231 0.1113 0.0001 0.2117 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34150/ 7000 loss:0.3411 0.1136 0.0001 0.2273 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34200/ 7000 loss:0.3295 0.1025 0.0001 0.2269 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34250/ 7000 loss:0.3205 0.1029 0.0000 0.2175 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34300/ 7000 loss:0.3261 0.0991 0.0001 0.2269 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34350/ 7000 loss:0.3310 0.0974 0.0000 0.2336 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34400/ 7000 loss:0.3450 0.1160 0.0001 0.2289 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34450/ 7000 loss:0.3389 0.1075 0.0001 0.2314 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34500/ 7000 loss:0.3241 0.1134 0.0001 0.2106 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34550/ 7000 loss:0.3357 0.1092 0.0001 0.2264 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34600/ 7000 loss:0.3432 0.1148 0.0001 0.2282 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34650/ 7000 loss:0.3282 0.1117 0.0001 0.2164 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34700/ 7000 loss:0.3379 0.1092 0.0001 0.2286 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34750/ 7000 loss:0.3319 0.1054 0.0001 0.2264 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34800/ 7000 loss:0.3492 0.1205 0.0001 0.2287 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34850/ 7000 loss:0.3307 0.1152 0.0001 0.2154 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34900/ 7000 loss:0.3369 0.1053 0.0001 0.2315 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:34950/ 7000 loss:0.3389 0.1105 0.0001 0.2284 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35000/ 7000 loss:0.3231 0.1041 0.0001 0.2189 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35050/ 7000 loss:0.3222 0.1119 0.0001 0.2102 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35100/ 7000 loss:0.3423 0.1045 0.0001 0.2378 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35150/ 7000 loss:0.3242 0.0984 0.0001 0.2258 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35200/ 7000 loss:0.3424 0.1195 0.0001 0.2229 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35250/ 7000 loss:0.3297 0.1042 0.0001 0.2254 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35300/ 7000 loss:0.3539 0.1212 0.0000 0.2326 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35350/ 7000 loss:0.3376 0.1094 0.0001 0.2282 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35400/ 7000 loss:0.3239 0.1046 0.0001 0.2192 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35450/ 7000 loss:0.3376 0.1155 0.0001 0.2221 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35500/ 7000 loss:0.3409 0.1149 0.0001 0.2260 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35550/ 7000 loss:0.3380 0.1117 0.0001 0.2262 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35600/ 7000 loss:0.3323 0.1091 0.0001 0.2232 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35650/ 7000 loss:0.3204 0.1077 0.0001 0.2126 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35700/ 7000 loss:0.3235 0.1063 0.0000 0.2172 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35750/ 7000 loss:0.3324 0.1091 0.0000 0.2232 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35800/ 7000 loss:0.3346 0.1102 0.0001 0.2243 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35850/ 7000 loss:0.3304 0.1106 0.0001 0.2197 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35900/ 7000 loss:0.3343 0.1057 0.0001 0.2285 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:35950/ 7000 loss:0.3365 0.1104 0.0001 0.2260 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36000/ 7000 loss:0.3370 0.1098 0.0001 0.2271 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36050/ 7000 loss:0.3386 0.1118 0.0001 0.2268 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36100/ 7000 loss:0.3385 0.1108 0.0001 0.2276 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36150/ 7000 loss:0.3391 0.1101 0.0001 0.2289 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36200/ 7000 loss:0.3226 0.1142 0.0001 0.2084 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36250/ 7000 loss:0.3300 0.1048 0.0001 0.2251 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36300/ 7000 loss:0.3414 0.1171 0.0001 0.2242 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36350/ 7000 loss:0.3386 0.1120 0.0001 0.2265 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36400/ 7000 loss:0.3291 0.1040 0.0001 0.2250 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36450/ 7000 loss:0.3431 0.1027 0.0001 0.2403 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36500/ 7000 loss:0.3370 0.1028 0.0001 0.2340 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36550/ 7000 loss:0.3333 0.1089 0.0001 0.2244 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36600/ 7000 loss:0.3306 0.1088 0.0001 0.2216 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36650/ 7000 loss:0.3357 0.1097 0.0001 0.2260 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36700/ 7000 loss:0.3374 0.1113 0.0001 0.2259 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36750/ 7000 loss:0.3257 0.1102 0.0001 0.2154 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36800/ 7000 loss:0.3368 0.1049 0.0000 0.2318 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36850/ 7000 loss:0.3339 0.1034 0.0001 0.2305 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36900/ 7000 loss:0.3424 0.1136 0.0001 0.2287 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:36950/ 7000 loss:0.3374 0.1141 0.0001 0.2232 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37000/ 7000 loss:0.3413 0.1130 0.0001 0.2282 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37050/ 7000 loss:0.3283 0.1032 0.0001 0.2250 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37100/ 7000 loss:0.3356 0.1089 0.0001 0.2267 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37150/ 7000 loss:0.3272 0.1099 0.0001 0.2172 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37200/ 7000 loss:0.3353 0.1060 0.0001 0.2292 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37250/ 7000 loss:0.3130 0.1012 0.0001 0.2117 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37300/ 7000 loss:0.3263 0.1023 0.0001 0.2239 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37350/ 7000 loss:0.3291 0.1065 0.0000 0.2226 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37400/ 7000 loss:0.3408 0.1180 0.0001 0.2227 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37450/ 7000 loss:0.3175 0.0978 0.0001 0.2196 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37500/ 7000 loss:0.3247 0.1054 0.0001 0.2192 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37550/ 7000 loss:0.3322 0.1034 0.0001 0.2287 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37600/ 7000 loss:0.3297 0.1100 0.0000 0.2196 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+Iter:37650/ 7000 loss:0.3368 0.1133 0.0001 0.2234 imps:7.5 Fin:Thu May 19 03:22:07 2022 lr: 0.0000
+
